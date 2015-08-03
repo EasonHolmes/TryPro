@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="float_transparent">#00000000</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="error_stroke_color">#F27474</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+    <color name="text_color">#575757</color>
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+    <!--My color-->
+    <!--<color name="toolbar_background">#30D0DF</color>-->
+    <!--<color name="toolbar_background">#4BC9B4</color>-->
+    <color name="toolbar_background">@color/transparent</color>
+    <color name="toolbar_background2">#e63a3a</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="background_forFragment">#F6F6F6</color>
+    <color name="background_forupload">#fff3f3f3</color>
+    <color name="background_black">#000000</color>
+    <color name="background_gray">#757575</color>
+    <color name="background_gray2">#BBBBBB</color>
+    <color name="background_blue">#ff368adb</color>
+    <color name="background_blue2">#ff4868c4</color>
+    <color name="background_peach">#B847FF</color>
+    <color name="sweet_progress">#F27474</color>
+    <color name="background_blue_sky_normal">#11B7D1</color>
+    <color name="background_blue_sky_press">#ff1692d1</color>
+    <color name="albumback">#E1E0DE</color>
+    <color name="background_others">#FFC37DFF</color>
+    <color name="btn_normal">#fab760</color>
+    <color name="btn_press">@color/toolbar_background</color>
+    <color name="btn_color">#AEAEAE</color>
+    <color name="main_color">#f4f4f4</color>
+    <color name="main_title_color">#F5A2A3</color>
+    <color name="bottom_background">#F8F8F8</color>
+    <color name="status_colors">#db7c00</color>
+    <color name="gray_backgroud">#EFEEF4</color>
+    <color name="gray_line">#DEDFE0</color>
+    <color name="title_img_circle">#FDB96B</color>
+    <color name="jump_color">#F1494C</color>
+
+    <color name="background_allShareFragment1">#31334A</color>
+    <color name="background_allShareFragment2">#F1B135</color>
+    <color name="background_allShareFragment3">#12B0A2</color>
+    <color name="background_allShareFragment4">#EA6560</color>
+    <color name="background_allShareFragment5">#315A6E</color>
+    <color name="background_allShareFragment6">#B96759</color>
+    <color name="background_allShareFragment7">#A74A5F</color>
+    <color name="classification_clothess">#F27474</color>
+    <color name="line_color">#C6C7CE</color>
+
+    <color name="wheel_timebtn_nor">#54a3fa</color>
+    <color name="wheel_timebtn_pre">#CCCCCC</color>
+
+    <color name="gray_de">#666666</color>
+    <color name="list_item_press">#216b74ff</color>
+
+    <color name="theme_primary">#4387F0</color>
+    <color name="theme_primary_dark">#ff2b4d90</color>
+    <color name="colorAccent">#18b000</color>
+    <!-- 上传图片添加的颜色 -->
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+
+
+    <color name="style_red">#ff4c41</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="white">#ffffff</color>
+    <!--白色 -->
+    <color name="ivory">#fffff0</color>
+    <!--象牙色 -->
+    <color name="lightyellow">#ffffe0</color>
+    <!--亮黄色 -->
+    <color name="yellow">#ffff00</color>
+    <!--黄色 -->
+    <color name="snow">#fffafa</color>
+    <!--雪白色 -->
+    <color name="floralwhite">#fffaf0</color>
+    <!--花白色 -->
+    <color name="lemonchiffon">#fffacd</color>
+    <!--柠檬绸色 -->
+    <color name="cornsilk">#fff8dc</color>
+    <!--米绸色 -->
+    <color name="seaShell">#fff5ee</color>
+    <!--海贝色 -->
+    <color name="lavenderblush">#fff0f5</color>
+    <!--淡紫红 -->
+    <color name="papayawhip">#ffefd5</color>
+    <!--番木色 -->
+    <color name="blanchedalmond">#ffebcd</color>
+    <!--白杏色 -->
+    <color name="mistyrose">#ffe4e1</color>
+    <!--浅玫瑰色 -->
+    <color name="bisque">#ffe4c4</color>
+    <!--桔黄色 -->
+    <color name="moccasin">#ffe4b5</color>
+    <!--鹿皮色 -->
+    <color name="navajowhite">#ffdead</color>
+    <!--纳瓦白 -->
+    <color name="peachpuff">#ffdab9</color>
+    <!--桃色 -->
+    <color name="gold">#ffd700</color>
+    <!--金色 -->
+    <color name="pink">#ffc0cb</color>
+    <!--粉红色 -->
+    <color name="lightpink">#ffb6c1</color>
+    <!--亮粉红色 -->
+    <color name="orange">#ffa500</color>
+    <!--橙色 -->
+    <color name="lightsalmon">#ffa07a</color>
+    <!--亮肉色 -->
+    <color name="darkorange">#ff8c00</color>
+    <!--暗桔黄色 -->
+    <color name="coral">#ff7f50</color>
+    <!--珊瑚色 -->
+    <color name="hotpink">#ff69b4</color>
+    <!--热粉红色 -->
+    <color name="tomato">#ff6347</color>
+    <!--西红柿色 -->
+    <color name="orangered">#ff4500</color>
+    <!--红橙色 -->
+    <color name="deeppink">#ff1493</color>
+    <!--深粉红色 -->
+    <color name="fuchsia">#ff00ff</color>
+    <!--紫红色 -->
+    <color name="magenta">#ff00ff</color>
+    <!--红紫色 -->
+    <color name="red">#ff0000</color>
+    <!--红色 -->
+    <color name="oldlace">#fdf5e6</color>
+    <!--老花色 -->
+    <color name="lightgoldenrodyellow">#fafad2</color>
+    <!--亮金黄色 -->
+    <color name="linen">#faf0e6</color>
+    <!--亚麻色 -->
+    <color name="antiquewhite">#faebd7</color>
+    <!--古董白 -->
+    <color name="salmon">#fa8072</color>
+    <!--鲜肉色 -->
+    <color name="ghostwhite">#f8f8ff</color>
+    <!--幽灵白 -->
+    <color name="mintcream">#f5fffa</color>
+    <!--薄荷色 -->
+    <color name="whitesmoke">#f5f5f5</color>
+    <!--烟白色 -->
+    <color name="beige">#f5f5dc</color>
+    <!--米色 -->
+    <color name="wheat">#f5deb3</color>
+    <!--浅黄色 -->
+    <color name="sandybrown">#f4a460</color>
+    <!--沙褐色 -->
+    <color name="azure">#f0ffff</color>
+    <!--天蓝色 -->
+    <color name="honeydew">#f0fff0</color>
+    <!--蜜色 -->
+    <color name="aliceblue">#f0f8ff</color>
+    <!--艾利斯兰 -->
+    <color name="khaki">#f0e68c</color>
+    <!--黄褐色 -->
+    <color name="lightcoral">#f08080</color>
+    <!--亮珊瑚色 -->
+    <color name="palegoldenrod">#eee8aa</color>
+    <!--苍麒麟色 -->
+    <color name="violet">#ee82ee</color>
+    <!--紫罗兰色 -->
+    <color name="darksalmon">#e9967a</color>
+    <!--暗肉色 -->
+    <color name="lavender">#e6e6fa</color>
+    <!--淡紫色 -->
+    <color name="lightcyan">#e0ffff</color>
+    <!--亮青色 -->
+    <color name="burlywood">#deb887</color>
+    <!--实木色 -->
+    <color name="plum">#dda0dd</color>
+    <!--洋李色 -->
+    <color name="gainsboro">#dcdcdc</color>
+    <!--淡灰色 -->
+    <color name="crimson">#dc143c</color>
+    <!--暗深红色 -->
+    <color name="palevioletred">#db7093</color>
+    <!--苍紫罗兰色 -->
+    <color name="goldenrod">#daa520</color>
+    <!--金麒麟色 -->
+    <color name="orchid">#da70d6</color>
+    <!--淡紫色 -->
+    <color name="thistle">#d8bfd8</color>
+    <!--蓟色 -->
+    <color name="lightgray">#d3d3d3</color>
+    <!--亮灰色 -->
+    <color name="lightgrey">#d3d3d3</color>
+    <!--亮灰色 -->
+    <color name="tan">#d2b48c</color>
+    <!--茶色 -->
+    <color name="chocolate">#d2691e</color>
+    <!--巧可力色 -->
+    <color name="peru">#cd853f</color>
+    <!--秘鲁色 -->
+    <color name="indianred">#cd5c5c</color>
+    <!--印第安红 -->
+    <color name="mediumvioletred">#c71585</color>
+    <!--中紫罗兰色 -->
+    <color name="silver">#c0c0c0</color>
+    <!--银色 -->
+    <color name="darkkhaki">#bdb76b</color>
+    <!--暗黄褐色 -->
+    <color name="rosybrown">#bc8f8f</color>
+    <!--褐玫瑰红 -->
+    <color name="mediumorchid">#ba55d3</color>
+    <!--中粉紫色 -->
+    <color name="darkgoldenrod">#b8860b</color>
+    <!--暗金黄色 -->
+    <color name="firebrick">#b22222</color>
+    <!--火砖色 -->
+    <color name="powderblue">#b0e0e6</color>
+    <!--粉蓝色 -->
+    <color name="lightsteelblue">#b0c4de</color>
+    <!--亮钢兰色 -->
+    <color name="paleturquoise">#afeeee</color>
+    <!--苍宝石绿 -->
+    <color name="greenyellow">#adff2f</color>
+    <!--黄绿色 -->
+    <color name="lightblue">#add8e6</color>
+    <!--亮蓝色 -->
+    <color name="darkgrey">#a9a9a9</color>
+    <!--暗灰色 -->
+    <color name="brown">#a52a2a</color>
+    <!--褐色 -->
+    <color name="sienna">#a0522d</color>
+    <!--赭色 -->
+    <color name="darkorchid">#9932cc</color>
+    <!--暗紫色 -->
+    <color name="palegreen">#98fb98</color>
+    <!--苍绿色 -->
+    <color name="darkviolet">#9400d3</color>
+    <!--暗紫罗兰色 -->
+    <color name="mediumpurple">#9370db</color>
+    <!--中紫色 -->
+    <color name="lightgreen">#90ee90</color>
+    <!--亮绿色 -->
+    <color name="darkseagreen">#8fbc8f</color>
+    <!--暗海兰色 -->
+    <color name="saddlebrown">#8b4513</color>
+    <!--重褐色 -->
+    <color name="darkmagenta">#8b008b</color>
+    <!--暗洋红 -->
+    <color name="darkred">#8b0000</color>
+    <!--暗红色 -->
+    <color name="blueviolet">#8a2be2</color>
+    <!--紫罗兰蓝色 -->
+    <color name="lightskyblue">#87cefa</color>
+    <!--亮天蓝色 -->
+    <color name="skyblue">#87ceeb</color>
+    <!--天蓝色 -->
+    <color name="gray">#9b9b9b</color>
+    <!--灰色 -->
+    <color name="olive">#808000</color>
+    <!--橄榄色 -->
+    <color name="purple">#800080</color>
+    <!--紫色 -->
+    <color name="maroon">#800000</color>
+    <!--粟色 -->
+    <color name="aquamarine">#7fffd4</color>
+    <!--碧绿色 -->
+    <color name="chartreuse">#7fff00</color>
+    <!--黄绿色 -->
+    <color name="lawngreen">#7cfc00</color>
+    <!--草绿色 -->
+    <color name="mediumslateblue">#7b68ee</color>
+    <!--中暗蓝色 -->
+    <color name="lightslategray">#778899</color>
+    <!--亮蓝灰 -->
+    <color name="lightslategrey">#778899</color>
+    <!--亮蓝灰 -->
+    <color name="slategray">#708090</color>
+    <!--灰石色 -->
+    <color name="slategrey">#708090</color>
+    <!--灰石色 -->
+    <color name="olivedrab">#6b8e23</color>
+    <!--深绿褐色 -->
+    <color name="slateblue">#6a5acd</color>
+    <!--石蓝色 -->
+    <color name="dimgray">#696969</color>
+    <!--暗灰色 -->
+    <color name="dimgrey">#696969</color>
+    <!--暗灰色 -->
+    <color name="mediumaquamarine">#66cdaa</color>
+    <!--中绿色 -->
+    <color name="cornflowerblue">#6495ed</color>
+    <!--菊兰色 -->
+    <color name="cadetblue">#5f9ea0</color>
+    <!--军兰色 -->
+    <color name="darkolivegreen">#556b2f</color>
+    <!--暗橄榄绿 -->
+    <color name="indigo">#4b0082</color>
+    <!--靛青色 -->
+    <color name="mediumturquoise">#48d1cc</color>
+    <!--中绿宝石 -->
+    <color name="darkslateblue">#483d8b</color>
+    <!--暗灰蓝色 -->
+    <color name="steelblue">#4682b4</color>
+    <!--钢兰色 -->
+    <color name="royalblue">#4169e1</color>
+    <!--皇家蓝 -->
+    <color name="turquoise">#40e0d0</color>
+    <!--青绿色 -->
+    <color name="mediumseagreen">#3cb371</color>
+    <!--中海蓝 -->
+    <color name="limegreen">#32cd32</color>
+    <!--橙绿色 -->
+    <color name="darkslategray">#2f4f4f</color>
+    <!--暗瓦灰色 -->
+    <color name="darkslategrey">#2f4f4f</color>
+    <!--暗瓦灰色 -->
+    <color name="seagreen">#2e8b57</color>
+    <!--海绿色 -->
+    <color name="forestgreen">#228b22</color>
+    <!--森林绿 -->
+    <color name="lightseagreen">#20b2aa</color>
+    <!--亮海蓝色 -->
+    <color name="dodgerblue">#1e90ff</color>
+    <!--闪兰色 -->
+    <color name="midnightblue">#191970</color>
+    <!--中灰兰色 -->
+    <color name="aqua">#00ffff</color>
+    <!--浅绿色 -->
+    <color name="cyan">#00ffff</color>
+    <!--青色 -->
+    <color name="springgreen">#00ff7f</color>
+    <!--春绿色 -->
+    <color name="lime">#00ff00</color>
+    <!--酸橙色 -->
+    <color name="mediumspringgreen">#00fa9a</color>
+    <!--中春绿色 -->
+    <color name="darkturquoise">#00ced1</color>
+    <!--暗宝石绿 -->
+    <color name="deepskyblue">#00bfff</color>
+    <!--深天蓝色 -->
+    <color name="darkcyan">#008b8b</color>
+    <!--暗青色 -->
+    <color name="teal">#008080</color>
+    <!--水鸭色 -->
+    <color name="green">#008000</color>
+    <!--绿色 -->
+    <color name="darkgreen">#006400</color>
+    <!--暗绿色 -->
+    <color name="blue">#0000ff</color>
+    <!--蓝色 -->
+    <color name="mediumblue">#0000cd</color>
+    <!--中兰色 -->
+    <color name="darkblue">#00008b</color>
+    <!--暗蓝色 -->
+    <color name="navy">#000080</color>
+    <!--海军色 -->
+    <!--<color name="black">#000000</color>-->
+    <color name="black">#494949</color>
+
+    <color name="black_light">#646464</color>
+    <!--黑色 -->
+    <color name="transparent">#0000</color>
+    <!-- 透明 -->
+    <color name="transparent2">#8000</color>
+    <!-- 透明 -->
+
+
+    <!--floationactionbutton-->
+    <color name="material_blue_500">#5677fc</color>
+    <color name="material_blue_600">#4e6cef</color>
+    <color name="primary">#3f51b5</color>
+    <color name="primary_pressed">#303f9f</color>
+    <color name="ripple">#ff80ab</color>
+    <color name="accent">#ff4081</color>
+    <color name="accent_pressed">#f50057</color>
+
+
+    <color name="light_gray">#ffdddddd</color>
+    <color name="linecolor">#30808080</color>
+
+    <!-- Aquamarine -->
+    <color name="Aquamarine_Darker">#ff658B98</color>
+    <color name="Aquamarine_Dark">#ff77A3B3</color>
+    <color name="Aquamarine_Primary">#ff8fc5d8</color>
+    <color name="Aquamarine_Light">#D7EBF1</color>
+    <color name="Aquamarine_Translucence">#aa8fc5d8</color>
+    <color name="Aquamarine_Transparent">#558fc5d8</color>
+
+    <!-- ScubaBlue -->
+    <color name="ScubaBlue_Darker">#017888</color>
+    <color name="ScubaBlue_Dark">#028FA3</color>
+    <color name="ScubaBlue_Primary">#ff02b0c8</color>
+    <color name="ScubaBlue_Light">#ff9ae6f0</color>
+    <color name="ScubaBlue_Translucence">#aa02b0c8</color>
+    <color name="ScubaBlue_Transparent">#5502b0c8</color>
+
+    <!-- LuciteGreen -->
+    <color name="LuciteGreen_Darker">#478C7E</color>
+    <color name="LuciteGreen_Dark">#55A796</color>
+    <color name="LuciteGreen_Primary">#ff68ccb7</color>
+    <color name="LuciteGreen_Light">#ffcaefe7</color>
+    <color name="LuciteGreen_Translucence">#aa68ccb7</color>
+    <color name="LuciteGreen_Transparent">#5568ccb7</color>
+
+    <!-- ClassicBlue -->
+    <color name="ClassicBlue_Darker">#0B294A</color>
+    <color name="ClassicBlue_Dark">#0F3865</color>
+    <color name="ClassicBlue_Primary">#ff144c8a</color>
+    <color name="ClassicBlue_Light">#ff95b0cc</color>
+    <color name="ClassicBlue_Translucence">#aa144c8a</color>
+    <color name="ClassicBlue_Transparent">#55144c8a</color>
+
+    <!-- ToastedAlmond -->
+    <color name="ToastedAlmond_Darker">#967D6B</color>
+    <color name="ToastedAlmond_Dark">#B1937F</color>
+    <color name="ToastedAlmond_Primary">#ffd6b299</color>
+    <color name="ToastedAlmond_Light">#fff6cfb3</color>
+    <color name="ToastedAlmond_Translucence">#aad6b299</color>
+    <color name="ToastedAlmond_Transparent">#55d6b299</color>
+
+    <!-- StrawberryIce -->
+    <color name="StrawberryIce_Darker">#AF5C66</color>
+    <color name="StrawberryIce_Dark">#CA6A75</color>
+    <color name="StrawberryIce_Primary">#ffef7e8b</color>
+    <color name="StrawberryIce_Light">#FFC1C8</color>
+    <color name="StrawberryIce_Translucence">#aaef7e8b</color>
+    <color name="StrawberryIce_Transparent">#55ef7e8b</color>
+
+    <!-- Tangerine -->
+    <color name="Tangerine_Darker">#B76335</color>
+    <color name="Tangerine_Dark">#D2723C</color>
+    <color name="Tangerine_Primary">#fff78647</color>
+    <color name="Tangerine_Light">#ffffd1b7</color>
+    <color name="Tangerine_Translucence">#aaf78647</color>
+    <color name="Tangerine_Transparent">#55f78647</color>
+
+    <!-- Custard -->
+    <color name="Custard_Darker">#ACA064</color>
+    <color name="Custard_Dark">#C7BA74</color>
+    <color name="Custard_Primary">#ffecdc89</color>
+    <color name="Custard_Light">#FFF7CF</color>
+    <color name="Custard_Translucence">#aaecdc89</color>
+    <color name="Custard_Transparent">#55ecdc89</color>
+
+    <!-- Marsala -->
+    <color name="Marsala_Darker">#622E2F</color>
+    <color name="Marsala_Dark">#7D3B3C</color>
+    <color name="Marsala_Primary">#ffa24c4e</color>
+    <color name="Marsala_Light">#ffdabbbb</color>
+    <color name="Marsala_Translucence">#aaa24c4e</color>
+    <color name="Marsala_Transparent">#55a24c4e</color>
+
+    <!-- GlacierGray -->
+    <color name="GlacierGray_Darker">#858B8B</color>
+    <color name="GlacierGray_Dark">#9FA6A6</color>
+    <color name="GlacierGray_Primary">#ffc2cbcb</color>
+    <color name="GlacierGray_Light">#d6dcdc</color>
+    <color name="GlacierGray_Translucence">#aac2cbcb</color>
+    <color name="GlacierGray_Transparent">#55c2cbcb</color>
+
+    <!-- DuskBlue -->
+    <color name="DuskBlue_Darker">#658B98</color>
+    <color name="DuskBlue_Dark">#77A3B3</color>
+    <color name="DuskBlue_Primary">#ff8fc5d8</color>
+    <color name="DuskBlue_Light">#D7EBF1</color>
+    <color name="DuskBlue_Translucence">#aa8fc5d8</color>
+    <color name="DuskBlue_Transparent">#558fc5d8</color>
+
+    <!-- Treetop -->
+    <color name="Treetop_Darker">#1D351C</color>
+    <color name="Treetop_Dark">#2C502A</color>
+    <color name="Treetop_Primary">#ff41753d</color>
+    <color name="Treetop_Light">#ffb0c1af</color>
+    <color name="Treetop_Translucence">#aa41753d</color>
+    <color name="Treetop_Transparent">#5541753d</color>
+
+    <!-- Woodbine -->
+    <color name="Woodbine_Darker">#434621</color>
+    <color name="Woodbine_Dark">#5D612E</color>
+    <color name="Woodbine_Primary">#ff808640</color>
+    <color name="Woodbine_Light">#ffc8cab1</color>
+    <color name="Woodbine_Translucence">#aa808640</color>
+    <color name="Woodbine_Transparent">#55808640</color>
+
+    <!-- Sandstone -->
+    <color name="Sandstone_Darker">#936147</color>
+    <color name="Sandstone_Dark">#AE7354</color>
+    <color name="Sandstone_Primary">#ffd38b66</color>
+    <color name="Sandstone_Light">#ECC0A9</color>
+    <color name="Sandstone_Translucence">#aad38b66</color>
+    <color name="Sandstone_Transparent">#55d38b66</color>
+
+    <!-- Titanium -->
+    <color name="Titanium_Darker">#49484A</color>
+    <color name="Titanium_Dark">#646365</color>
+    <color name="Titanium_Primary">#ff89878a</color>
+    <color name="Titanium_Light">#E6E3E8</color>
+    <color name="Titanium_Translucence">#aa89878a</color>
+    <color name="Titanium_Transparent">#5589878a</color>
+
+    <!-- LavenderHerb -->
+    <color name="LavenderHerb_Darker">#795A72</color>
+    <color name="LavenderHerb_Dark">#946E8B</color>
+    <color name="LavenderHerb_Primary">#ffb98aae</color>
+    <color name="LavenderHerb_Light">#ffffdef7</color>
+    <color name="LavenderHerb_Translucence">#aab98aae</color>
+    <color name="LavenderHerb_Transparent">#55b98aae</color>
+
+    <!-- Dark -->
+    <color name="Dark_Darker">#050505</color>
+    <color name="Dark_Dark">#202020</color>
+    <color name="Dark_Primary">#454545</color>
+    <color name="Dark_Light">#82a3a3a3</color>
+    <color name="Dark_Translucence">#aa000000</color>
+    <color name="Dark_Transparent">#55000000</color>
+
+
+    <integer-array name="Aquamarine">
+        <item>@color/Aquamarine_Darker</item>
+        <item>@color/Aquamarine_Dark</item>
+        <item>@color/Aquamarine_Primary</item>
+        <item>@color/Aquamarine_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="ScubaBlue">
+        <item>@color/ScubaBlue_Darker</item>
+        <item>@color/ScubaBlue_Dark</item>
+        <item>@color/ScubaBlue_Primary</item>
+        <item>@color/ScubaBlue_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="LuciteGreen">
+        <item>@color/LuciteGreen_Darker</item>
+        <item>@color/LuciteGreen_Dark</item>
+        <item>@color/LuciteGreen_Primary</item>
+        <item>@color/LuciteGreen_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+    <integer-array name="LuciteGreen_my">
+        <item>@color/toolbar_background</item>
+        <!--内容的的颜色-->
+        <item>@color/toolbar_background</item>
+        <!--横线按下颜色-->
+        <item>@color/toolbar_background</item>
+        <!--字按下颜色和不按横线颜色-->
+        <item>@color/btn_normal</item>
+        <!--字未按颜色-->
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="ClassicBlue">
+        <item>@color/ClassicBlue_Darker</item>
+        <item>@color/ClassicBlue_Dark</item>
+        <item>@color/ClassicBlue_Primary</item>
+        <item>@color/ClassicBlue_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="ToastedAlmond">
+        <item>@color/ToastedAlmond_Darker</item>
+        <item>@color/ToastedAlmond_Dark</item>
+        <item>@color/ToastedAlmond_Primary</item>
+        <item>@color/ToastedAlmond_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="StrawberryIce">
+        <item>@color/StrawberryIce_Darker</item>
+        <item>@color/StrawberryIce_Dark</item>
+        <item>@color/StrawberryIce_Primary</item>
+        <item>@color/StrawberryIce_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Tangerine">
+        <item>@color/Tangerine_Darker</item>
+        <item>@color/Tangerine_Dark</item>
+        <item>@color/Tangerine_Primary</item>
+        <item>@color/Tangerine_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Custard">
+        <item>@color/Custard_Darker</item>
+        <item>@color/Custard_Dark</item>
+        <item>@color/Custard_Primary</item>
+        <item>@color/Custard_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Marsala">
+        <item>@color/Marsala_Darker</item>
+        <item>@color/Marsala_Dark</item>
+        <item>@color/Marsala_Primary</item>
+        <item>@color/Marsala_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="GlacierGray">
+        <item>@color/GlacierGray_Darker</item>
+        <item>@color/GlacierGray_Dark</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+        <item>@color/Dark_Translucence</item>
+        <item>@color/Dark_Transparent</item>
+    </integer-array>
+
+    <integer-array name="DuskBlue">
+        <item>@color/DuskBlue_Darker</item>
+        <item>@color/DuskBlue_Dark</item>
+        <item>@color/DuskBlue_Primary</item>
+        <item>@color/DuskBlue_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Treetop">
+        <item>@color/Treetop_Darker</item>
+        <item>@color/Treetop_Dark</item>
+        <item>@color/Treetop_Primary</item>
+        <item>@color/Treetop_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Woodbine">
+        <item>@color/Woodbine_Darker</item>
+        <item>@color/Woodbine_Dark</item>
+        <item>@color/Woodbine_Primary</item>
+        <item>@color/Woodbine_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Sandstone">
+        <item>@color/Sandstone_Darker</item>
+        <item>@color/Sandstone_Dark</item>
+        <item>@color/Sandstone_Primary</item>
+        <item>@color/Sandstone_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Titanium">
+        <item>@color/Titanium_Darker</item>
+        <item>@color/Titanium_Dark</item>
+        <item>@color/Titanium_Primary</item>
+        <item>@color/Titanium_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="LavenderHerb">
+        <item>@color/LavenderHerb_Darker</item>
+        <item>@color/LavenderHerb_Dark</item>
+        <item>@color/LavenderHerb_Primary</item>
+        <item>@color/LavenderHerb_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+    <integer-array name="Dark">
+        <item>@color/Dark_Darker</item>
+        <item>@color/Dark_Dark</item>
+        <item>@color/Dark_Primary</item>
+        <item>@color/Dark_Light</item>
+        <item>@color/GlacierGray_Primary</item>
+        <item>@color/GlacierGray_Light</item>
+    </integer-array>
+
+
+</resources>

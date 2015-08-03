@@ -1,0 +1,39 @@
+<resources>
+
+    <!--toolbar-->
+    <!--<style name="ActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <style name="ActionBarTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimary">@color/toolbar_background</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">@color/toolbar_background</item>
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <!--umengDialog-->
+    <style name="Theme.UMDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--<style name="PopupAnimation" mce_bogus="1" parent="android:Animation">-->
+    <!--<item name="android:windowEnterAnimation">@anim/activity_translate_in</item>-->
+    <!--<item name="android:windowExitAnimation">@anim/activity_translate_out</item>-->
+    <!--</style>-->
+
+    <!--<style name="PopupDialog" mce_bogus="1" parent="android:Animation">-->
+    <!--<item name="android:windowEnterAnimation">@anim/zoomin</item>-->
+    <!--<item name="android:windowExitAnimation">@anim/activity_translate_out</item>-->
+    <!--</style>-->
+
+    <!-- 时间选择器popwidnow 显示消失动画 -->
+    <!--<style name="timepopwindow_anim_style">-->
+    <!--<item name="android:windowEnterAnimation">@anim/timepicker_anim_enter_bottom</item>-->
+    <!--&lt;!&ndash; 指定显示的动画xml &ndash;&gt;-->
+    <!--<item name="android:windowExitAnimation">@anim/timepicker_anim_exit_bottom</item>-->
+    <!--&lt;!&ndash; 指定消失的动画xml &ndash;&gt;-->
+    <!--</style>-->
+</resources>
