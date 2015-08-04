@@ -21,7 +21,13 @@
             android:name=".ReboundActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CenterActivity"
+            android:name=".animation.CenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SimpleAnimationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".animation.GifActivity"
             android:screenOrientation="portrait" />
     </application>
 

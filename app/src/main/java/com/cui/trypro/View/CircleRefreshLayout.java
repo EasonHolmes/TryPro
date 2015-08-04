@@ -18,6 +18,8 @@ import com.cui.trypro.R;
 
 /**
  * Created by zhanglei on 15/7/20.
+ *
+ *下拉刷新
  */
 public class CircleRefreshLayout extends FrameLayout {
 

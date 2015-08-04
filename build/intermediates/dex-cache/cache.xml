@@ -2,46 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/libs/GifView.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b63ff1f358aee4077be87db5f10741b61b32fc15.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/libs/rebound-0.3.8.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/rebound-0.3.8-f8f7ea3622b87982c69fd7d228f72a9a0bdc1e5f.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/butterknife-6.1.0-ac724ae799341cb7053d90ad50ac7bb6bb8bd1e5.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-0a57d57c0a7d66f662c25848b94ac9708c342c54.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/sdk/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-98ff0887682e340aedc0b254a6c60bfe2fd3b489.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-013d641a68221a0186898d3431549d63e7f16ce5.jar" />
+        sha1="5a518235931001b94e87540c99bd13258f614622">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/GifView-e9e5f30f306afc382bddaa6ad4b596bbc413d207.jar" />
     </item>
 
 </items>

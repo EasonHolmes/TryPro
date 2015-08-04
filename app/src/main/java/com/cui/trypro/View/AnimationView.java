@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 /**
  * Created by zhanglei on 15/7/18.
+ * 下拉刷新动画类
  */
 public class AnimationView extends View {
 

@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.cui.trypro.animation.CenterActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -94,10 +95,17 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                startActivity(new Intent(mContext, ReboundActivity.class));
-                overridePendingTransition(R.anim.in_translate_top, R.anim.in_translate_top);
+                nextActivity(ReboundActivity.class);
+                overridePendingTransition(R.anim.in_translate_top, R.anim.in_translate_top);//从上面掉下来
                 break;
-
+            case 1:
+                nextActivity(SimpleAnimationActivity.class);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的
+                break;
         }
+    }
+
+    private void nextActivity(Class getclass) {
+        startActivity(new Intent(mContext, getclass));
     }
 }
