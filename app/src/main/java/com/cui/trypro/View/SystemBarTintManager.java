@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cui.trypro;
+package com.cui.trypro.View;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

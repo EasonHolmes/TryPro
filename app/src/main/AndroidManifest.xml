@@ -18,7 +18,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OpenActivity"
+            android:name=".ReboundActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CenterActivity"
             android:screenOrientation="portrait" />
     </application>
 
