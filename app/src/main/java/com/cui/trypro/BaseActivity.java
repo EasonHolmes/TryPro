@@ -8,11 +8,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
 import com.cui.trypro.View.SystemBarTintManager;
+import com.cui.trypro.animation.activityOptionCS.transition.TransitionCompat;
 
 
 @SuppressLint("Registered")
@@ -38,8 +40,6 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //隐藏状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
     }
@@ -57,7 +57,7 @@ public class BaseActivity extends AppCompatActivity {
             SystemBarTintManager tintManager = new SystemBarTintManager(this);
             tintManager.setStatusBarTintEnabled(true);
             //此处可以重新指定状态栏颜色
-            tintManager.setStatusBarTintResource(R.color.status_colors);
+            tintManager.setStatusBarTintResource(R.color.background_blue2);
         }
         mToolbar = (Toolbar) findViewById(R.id.mToolBar);
         mToolbar.setTitle("");//设置左上角标题的，默认是APP的名字
@@ -91,29 +91,32 @@ public class BaseActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case android.R.id.home:
-                finish();
+                Log.e(getClass().getName(), "sdfsdfs2222222");
+                onBackPressed();//在这调用这个相当于finish。但finish不会调用this.onbackpressed就等于无返回键没有动画了
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
-    protected void onPause() {
-        super.onPause();
-//        MobclickAgent.onPause(this);
-//        Utils.logger(getClass().getName(), "onPause===", 1);
-//        Utils.rememberCometAndOutTime(comeDate, Utils.formatDate(), getLocalClassName());
+    public void onBackPressed() {
+        /**
+         * //material 用这两行代码
+         * */
+//        注意onBackPressed()方法——这很重要。因为它让操作系统知道在关闭第二个activity之前要完成动画的执行。
+//        finishAfterTransition();
+        /**
+         * activityOPtionICs就这个
+         * */
+        //super.onBackPressed();//不能用super要不失效
+        //TransitionCompat.setExitTransition(new MySceneAnim(this));//a test anim.Should not be use with customAnimation
+        //TransitionCompat.setAnimStartDelay(0);// default
+        TransitionCompat.setAnimDuration(500);// default
+        //TransitionCompat.setTimeInterpolator(new AccelerateDecelerateInterpolator());// default
+        //TransitionCompat.finishAfterTransition(activity, enterAnim, exitAnim);// custom animation
+        // 这段代码必须放在ActivityOptionsCompat各种设置之后
+        TransitionCompat.finishAfterTransition(this);
+
     }
-
-    //
-//    @Override
-//    public void onBackPressed() {
-//        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
-////        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
-//    }
-    protected void toActivity() {
-//        overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
-    }
-
-
 }

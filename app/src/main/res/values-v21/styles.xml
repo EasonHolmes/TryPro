@@ -2,12 +2,19 @@
 
     <style name="ActionBarTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- toolbar（actionbar）颜色 -->
-        <item name="colorPrimary">@color/toolbar_background</item>
+        <item name="colorPrimary">@color/background_blue</item>
         <!-- 状态栏颜色 -->
-        <item name="colorPrimaryDark">@color/toolbar_background</item>
+        <item name="colorPrimaryDark">@color/background_blue2</item>
         <item name="android:windowBackground">@color/white</item>
         <item name="windowActionModeOverlay">true</item>
 
+
+        <!--<item name="android:windowTranslucentStatus">true</item> 这两行会去除状态栏底-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+
+
+        <!-- 允许使用transitions 开源的activityics需要这个-->
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 </resources>

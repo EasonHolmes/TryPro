@@ -4,8 +4,10 @@
     android:id="@+id/mToolBar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent"
-    android:minHeight="55dp"
+    android:background="@color/background_blue"
+    android:minHeight="?attr/actionBarSize"
+    android:gravity="center"
+
     android:theme="@style/ThemeOverlay.AppCompat.Light"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 

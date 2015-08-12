@@ -21,7 +21,7 @@ import butterknife.InjectView;
 /**
  * Created by cuiyang on 15/8/3.
  */
-public class CenterActivity extends BaseActivity {
+public class ZhiHuActivity extends BaseActivity {
     @InjectView(R.id.img_center)
     ImageView imgCenter;
 

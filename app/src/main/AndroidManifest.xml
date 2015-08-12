@@ -21,7 +21,7 @@
             android:name=".ReboundActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".animation.CenterActivity"
+            android:name=".animation.ZhiHuActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SimpleAnimationActivity"
@@ -29,6 +29,10 @@
         <activity
             android:name=".animation.GifActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".animation.AndroidL_NewApi"
+            android:screenOrientation="portrait" />
+        <activity android:name=".animation.MyOptionICS"/>
     </application>
 
 </manifest>

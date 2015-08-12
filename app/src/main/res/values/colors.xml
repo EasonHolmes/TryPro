@@ -34,7 +34,7 @@
     <color name="background_gray">#757575</color>
     <color name="background_gray2">#BBBBBB</color>
     <color name="background_blue">#ff368adb</color>
-    <color name="background_blue2">#ff4868c4</color>
+    <color name="background_blue2">#252c68</color>
     <color name="background_peach">#B847FF</color>
     <color name="sweet_progress">#F27474</color>
     <color name="background_blue_sky_normal">#11B7D1</color>
@@ -691,5 +691,5 @@
         <item>@color/GlacierGray_Light</item>
     </integer-array>
 
-
+    <drawable name="background">#eeeeee</drawable>
 </resources>

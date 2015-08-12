@@ -12,8 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.cui.trypro.animation.CenterActivity;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -22,7 +20,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     @InjectView(R.id.main_list)
     ListView mainList;
-    private String[] animation = {"ReboundActivity", "CenterActivity", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
+    private String[] animation = {"ReboundActivity", "SimpleAniamtionActivity", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private String[] animation2 = {"ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private Context mContext;
     private int lastItem;
@@ -100,9 +98,15 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 1:
                 nextActivity(SimpleAnimationActivity.class);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          <item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(false);//不退出程序让在后台运行
     }
 
     private void nextActivity(Class getclass) {

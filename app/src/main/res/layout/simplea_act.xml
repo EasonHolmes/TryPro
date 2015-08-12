@@ -2,15 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bacs"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
 
     <include layout="@layout/topbar" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缩放过场" />
+
+        <ImageView
+            android:id="@+id/img_te"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/img_bujian"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bac" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《-补间动画,实现两个界面共享元素。第一个界面的元素会平移到第二个所在的地方"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
     <ListView
         android:id="@+id/simple_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/bacs" />
 </LinearLayout>
