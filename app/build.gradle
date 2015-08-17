@@ -28,7 +28,13 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:support-v4:22.2.0'
-    compile 'com.jakewharton:butterknife:6.1.0'
-    compile files('libs/rebound-0.3.8.jar')
-    compile files('libs/GifView.jar')
+    compile 'com.android.support:design:22.2.0'//google design L 中的一些控件
+    compile 'com.jakewharton:butterknife:6.1.0'//注解findviewbyid
+    compile files('libs/rebound-0.3.8.jar')//fackbook控件
+    compile files('libs/GifView.jar')//gif控件
+    compile 'com.github.mmin18.layoutcast:library:1.+@aar'//只上传变更代码 的
+    compile 'com.android.support:palette-v7:22.+'//颜色提取的
+    compile 'com.android.support:recyclerview-v7:22.+'
+    compile 'com.android.support:cardview-v7:22.+'
+
 }

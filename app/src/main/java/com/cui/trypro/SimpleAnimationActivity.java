@@ -136,6 +136,7 @@ public class SimpleAnimationActivity extends BaseActivity implements AdapterView
 
 
     /**
+     * 补间动画
      * activity：当前activity的对象
      * <p/>
      * sharedElement：一个view对象，用来和新的activity中的一个view对象产生动画

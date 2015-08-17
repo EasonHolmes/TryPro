@@ -4,14 +4,11 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
-import com.cui.trypro.animation.activityOptionCS.anim.SceneFade;
 import com.cui.trypro.animation.activityOptionCS.anim.ViewAnimationListenerAdapter;
 import com.cui.trypro.animation.activityOptionCS.transition.TransitionCompat;
 import com.cui.trypro.animation.activityOptionCS.transition.TransitionListenerAdapter;

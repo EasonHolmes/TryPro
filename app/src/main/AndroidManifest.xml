@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cui.trypro">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -21,6 +24,11 @@
             android:name=".ReboundActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".InstaMateriaL_Activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Material_Toolbar_Animation_Activity"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".animation.ZhiHuActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -32,7 +40,12 @@
         <activity
             android:name=".animation.AndroidL_NewApi"
             android:screenOrientation="portrait" />
-        <activity android:name=".animation.MyOptionICS"/>
+        <activity
+            android:name=".animation.MyOptionICS"
+            android:screenOrientation="portrait" />
+
+
+        <activity android:name="com.github.mmin18.layoutcast.ResetActivity" />
     </application>
 
 </manifest>

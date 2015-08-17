@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
+    <include layout="@layout/topbar" />
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/mDrawerlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_forFragment"
-        android:orientation="vertical"><!--android:fitsSystemWindows="true"是防止Toolbar顶出状态栏-->
+        android:orientation="vertical">
         <!---Drawer会把第一个节点做为内容区，第二个做为侧滑内容 -->
 
         <FrameLayout
@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <include layout="@layout/topbar" />
+                <!--<include layout="@layout/topbar" />-->
 
                 <com.cui.trypro.View.CircleRefreshLayout
                     android:layout_width="match_parent"
