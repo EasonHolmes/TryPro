@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.cui.trypro.BaseActivity;
+import com.cui.trypro.R;
 import com.cui.trypro.animation.AndroidL_NewApi;
 import com.cui.trypro.animation.GifActivity;
 import com.cui.trypro.animation.MyOptionICS;

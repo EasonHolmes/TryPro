@@ -11,6 +11,10 @@
         <item name="android:windowBackground">@color/white</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+
+
+        <!-- 允许使用transitions 开源的activityics需要这个-->
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
     <!--umengDialog-->

@@ -4,6 +4,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
 
@@ -14,8 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
 
         <!--pport library包含了一个特殊的字符串资源@string/appbar_scrolling_view_behavior，
         它和AppBarLayout.ScrollingViewBehavior相匹配，用来通知AppBarLayout 这个特殊的view何时发生了滚动事件，
@@ -35,7 +34,6 @@
             android:layout_height="wrap_content">
 
             <include
-                android:id="@+id/toolbar"
                 layout="@layout/topbar2" />
         </android.support.design.widget.AppBarLayout>
 

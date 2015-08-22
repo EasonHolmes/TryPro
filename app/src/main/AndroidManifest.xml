@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ReboundActivity"
+            android:name=".TreeView.ReboundActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".InstaMateriaL_Activity"
+            android:name=".TreeView.InstaMateriaL_Activity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Material_Toolbar_Animation_Activity"
+        <activity android:name=".TreeView.Material_Toolbar_Animation_Activity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".animation.ZhiHuActivity"

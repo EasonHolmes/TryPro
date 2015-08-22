@@ -4,6 +4,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">0dp</dimen>
     <dimen name="activity_vertical_margin">0dp</dimen>
+    <dimen name="btn_fab_size">56dp</dimen>
 
     <!-- circleImageView -->
     <declare-styleable name="CircleImageView">

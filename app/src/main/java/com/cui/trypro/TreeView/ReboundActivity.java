@@ -1,4 +1,4 @@
-package com.cui.trypro;
+package com.cui.trypro.TreeView;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.cui.trypro.BaseActivity;
+import com.cui.trypro.R;
 import com.facebook.rebound.Spring;
 import com.facebook.rebound.SpringConfig;
 import com.facebook.rebound.SpringListener;

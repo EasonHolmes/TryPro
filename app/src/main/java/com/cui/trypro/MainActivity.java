@@ -2,8 +2,6 @@ package com.cui.trypro;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,6 +20,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.cui.trypro.TreeView.InstaMateriaL_Activity;
+import com.cui.trypro.TreeView.Material_Toolbar_Animation_Activity;
+import com.cui.trypro.TreeView.ReboundActivity;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -38,7 +40,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     EditText editTem;
     @InjectView(R.id.textInput)
     TextInputLayout textInput;
-    private String[] animation = {"ReboundActivity", "SimpleAniamtionActivity", "Material_Toolbar_animation", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
+    private String[] animation = {"ReboundActivity", "SimpleAniamtionActivity", "Material_Library_animation", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private String[] animation2 = {"ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private Context mContext;
     private int lastItem;
@@ -125,11 +127,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
                 break;
             case 2:
+//                Material_Library_animation
                 nextActivity(Material_Toolbar_Animation_Activity.class);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
                 break;
             case 3:
-                nextActivity(InstaMateriaL_Activity.class);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
+//                InstaMaterial概念设计_library
+                scaleUpAnim(InstaMateriaL_Activity.class, mContext, view);
         }
     }
 

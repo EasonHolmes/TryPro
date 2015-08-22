@@ -1,6 +1,9 @@
 package com.cui.trypro;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,9 +14,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.cui.trypro.View.SystemBarTintManager;
+import com.cui.trypro.animation.MyOptionICS;
+import com.cui.trypro.animation.activityOptionCS.ActivityCompatICS;
+import com.cui.trypro.animation.activityOptionCS.ActivityOptionsCompatICS;
 import com.cui.trypro.animation.activityOptionCS.transition.TransitionCompat;
 
 
@@ -40,7 +48,10 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // 允许使用transitions 
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -73,6 +84,11 @@ public class BaseActivity extends AppCompatActivity {
         }
 
     }
+    protected void initAnimation(){
+        TransitionCompat.setAnimDuration(500);
+//         这段代码必须放在ActivityOptionsCompat各种设置之后
+        TransitionCompat.startTransition(this, R.layout.instamaterial);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -102,14 +118,14 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         /**
-         * //material 用这两行代码
+         * //material onBackPressed用这两行代码
          * */
 //        注意onBackPressed()方法——这很重要。因为它让操作系统知道在关闭第二个activity之前要完成动画的执行。
 //        finishAfterTransition();
         /**
          * activityOPtionICs就这个
          * */
-        //super.onBackPressed();//不能用super要不失效
+//        super.onBackPressed();//不能用super要不失效
         //TransitionCompat.setExitTransition(new MySceneAnim(this));//a test anim.Should not be use with customAnimation
         //TransitionCompat.setAnimStartDelay(0);// default
         TransitionCompat.setAnimDuration(500);// default
@@ -118,5 +134,24 @@ public class BaseActivity extends AppCompatActivity {
         // 这段代码必须放在ActivityOptionsCompat各种设置之后
         TransitionCompat.finishAfterTransition(this);
 
+    }
+
+    /**
+     * source：一个view对象，用户确定新activity启动的初始坐标
+     * <p/>
+     * startX：新activity出现的初始X坐标，这个坐标是相对于source的左上角X坐标
+     * <p/>
+     * startY：新activity出现的初始Y坐标，这个坐标相对于source的左上角Y坐标
+     * <p/>
+     * width：新activity初始的宽度
+     * <p/>
+     * height：新activity初始的高度
+     */
+    public void scaleUpAnim(Class ss,Context mContext,View view) {
+
+        ActivityOptionsCompatICS options = ActivityOptionsCompatICS.makeScaleUpAnimation(view,
+                30, 30, //拉伸开始的坐标
+                view.getMeasuredWidth(), view.getMeasuredHeight());//初始的宽高
+        ActivityCompatICS.startActivity(this, new Intent(mContext, ss), options.toBundle());
     }
 }
