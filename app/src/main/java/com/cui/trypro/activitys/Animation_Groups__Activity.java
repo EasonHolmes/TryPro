@@ -1,6 +1,7 @@
 package com.cui.trypro.activitys;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
 import com.cui.trypro.adapter.Animation_groups_adapter;
+import com.cui.trypro.animation_groups.InstaMateriaL_Activity;
+import com.cui.trypro.animation_groups.View_BaseAnimation;
 import com.cui.trypro.utils.RecyclerUtils;
 import com.cui.trypro.utils.Utils;
 
@@ -78,9 +81,10 @@ public class Animation_Groups__Activity extends BaseActivity {
                 switch (position) {
                     case 0:
                         hand.obtainMessage(TOAST, "click:" + position).sendToTarget();
-
+                        startActivity(new Intent(mContext, InstaMateriaL_Activity.class));
                         break;
                     case 1:
+                        startActivity(new Intent(mContext, View_BaseAnimation.class));
                         break;
                 }
             }

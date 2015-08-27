@@ -23,8 +23,10 @@ import android.widget.ListView;
 
 import com.cui.trypro.activitys.Activity_Animation_Act;
 import com.cui.trypro.activitys.Animation_Groups__Activity;
+import com.cui.trypro.activitys.Small_FunctionDemo_Act;
 import com.cui.trypro.animation_groups.ReboundActivity;
 import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
+import com.cui.trypro.utils.Utils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -42,8 +44,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Toolbar mToolBar;
 
     private ActionBarDrawerToggle mDrawerToggle;
-    private String[] animation = {"Rebound使用", "Activity转场动画", "Material_Library", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
-
+    private String[] animation = {"Rebound使用", "Activity转场动画", "Material_Library", "小功能demo",
+            "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress",
+            "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation",
+            "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
 
     private String[] animation2 = {"ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private Context mContext;
@@ -161,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 nextActivity(Animation_Groups__Activity.class);
                 break;
             case 3:
+                Utils.nextAct(mContext, Small_FunctionDemo_Act.class);
 
         }
     }

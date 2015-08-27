@@ -7,11 +7,11 @@
 
     <com.balysv.materialripple.MaterialRippleLayout
         android:id="@+id/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:mrl_rippleAlpha="0.4"
         app:mrl_rippleColor="@color/toolbar_background2"
-        app:mrl_rippleOverlay="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:mrl_rippleOverlay="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +39,8 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="16dp"
                     android:text="Lorem ipsum dolor sit amet"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
             </LinearLayout>
 
             <View

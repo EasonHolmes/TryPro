@@ -20,8 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".WelActivity"
+            android:screenOrientation="portrait" />
 
         <!--View动画集合start-->
         <activity
@@ -57,8 +58,23 @@
             android:screenOrientation="portrait" />
         <!--activity转场集合end-->
 
+        <!--一些功能demo合集start-->
+        <activity
+            android:name=".activitys.Small_FunctionDemo_Act"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".small_function.Time_line_Act"
+            android:screenOrientation="portrait" />
 
+        <activity android:name=".small_function.SVG_act"
+            android:screenOrientation="portrait"/>
+        <!--一些功能demo合集end-->
+
+
+        <!--layotucast_Start-->
         <activity android:name="com.github.mmin18.layoutcast.ResetActivity" />
+        <!--layotucast_end-->
+
     </application>
 
 </manifest>

@@ -47,8 +47,7 @@ dependencies {
     //material_edittext
     compile 'com.squareup.picasso:picasso:2.5.2'
     //图片加载缓存库
-    compile files('libs/slidingmenu.jar')
     compile 'com.balysv:material-ripple:1.0.2'
     //水波纹
-
+    compile 'com.eftimoff:android-pathview:1.0.6@aar'
 }
