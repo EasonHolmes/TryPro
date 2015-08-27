@@ -2,11 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jar="/Users/cuiyang/Documents/work/sdk/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-0eb3c5e051ec71adee6586b48ea6cfcd79cf6321.jar" />
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-98ff0887682e340aedc0b254a6c60bfe2fd3b489.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-0a57d57c0a7d66f662c25848b94ac9708c342c54.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b63ff1f358aee4077be87db5f10741b61b32fc15.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-58b2a8db6a9798275419fd3b9005478d404a1c82.jar" />
     </item>
 
 </items>

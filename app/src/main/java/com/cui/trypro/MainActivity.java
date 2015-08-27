@@ -2,32 +2,34 @@ package com.cui.trypro;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
-import com.cui.trypro.TreeView.InstaMateriaL_Activity;
-import com.cui.trypro.TreeView.Material_Toolbar_Animation_Activity;
-import com.cui.trypro.TreeView.ReboundActivity;
+import com.cui.trypro.activitys.Activity_Animation_Act;
+import com.cui.trypro.activitys.Animation_Groups__Activity;
+import com.cui.trypro.animation_groups.ReboundActivity;
+import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener, TextWatcher {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
 
 
     @InjectView(R.id.main_list)
@@ -36,11 +38,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     NavigationView layoutDr;
     @InjectView(R.id.mDrawerlayout)
     DrawerLayout mDrawerlayout;
-    @InjectView(R.id.edit_tem)
-    EditText editTem;
-    @InjectView(R.id.textInput)
-    TextInputLayout textInput;
-    private String[] animation = {"ReboundActivity", "SimpleAniamtionActivity", "Material_Library_animation", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
+    @InjectView(R.id.mToolBar)
+    Toolbar mToolBar;
+
+    private ActionBarDrawerToggle mDrawerToggle;
+    private String[] animation = {"Rebound使用", "Activity转场动画", "Material_Library", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
+
+
     private String[] animation2 = {"ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private Context mContext;
     private int lastItem;
@@ -68,16 +72,24 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         mContext = this;
-        super.initToolbar(mContext.getResources().getString(R.string.app_name), false);
+        /**先加载mainactivity再加载welactivity这样过度就有知乎的效果了*/
+        startActivity(new Intent(mContext, WelActivity.class));
+        initToolbar();
+        initView();
 
+    }
+
+    private void initView() {
+        mainList.setOnItemClickListener(this);
+        layoutDr.setNavigationItemSelectedListener(this);
 
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, animation);
         mainList.setAdapter(adapter);
 
-        mainList.setOnItemClickListener(this);
         v = LayoutInflater.from(mContext).inflate(R.layout.footer, null);
         v.setVisibility(View.GONE);
         mainList.addFooterView(v);
+
         mainList.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -92,11 +104,29 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                 lastItem = firstVisibleItem + visibleItemCount - 1;
-                visiPostion = visibleItemCount;
+                visiPostion = visibleItemCount;//最后一个item进行刷新
             }
         });
-        layoutDr.setNavigationItemSelectedListener(this);
-        editTem.addTextChangedListener(this);
+    }
+
+    private void initToolbar() {
+        //设置整个ToolBar  继承自BaseActivity
+        //设定状态栏的颜色，当版本大于4.4时起作用
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+            tintManager.setStatusBarTintEnabled(true);
+            //此处可以重新指定状态栏颜色
+            tintManager.setStatusBarTintResource(R.color.background_blue2);
+        }
+        mToolBar.setTitle("");//设置左上角标题的，默认是APP的名字
+        mToolBar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(mToolBar);
+        getSupportActionBar().setHomeButtonEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        mDrawerlayout = (DrawerLayout) findViewById(R.id.mDrawerlayout);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerlayout, mToolBar, R.string.open, R.string.close);
+        mDrawerToggle.syncState();
+        mDrawerlayout.setDrawerListener(mDrawerToggle);
     }
 
 
@@ -123,17 +153,15 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 overridePendingTransition(R.anim.in_translate_top, R.anim.in_translate_top);//从上面掉下来
                 break;
             case 1:
-                nextActivity(SimpleAnimationActivity.class);
+                nextActivity(Activity_Animation_Act.class);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
                 break;
             case 2:
 //                Material_Library_animation
-                nextActivity(Material_Toolbar_Animation_Activity.class);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
+                nextActivity(Animation_Groups__Activity.class);
                 break;
             case 3:
-//                InstaMaterial概念设计_library
-                scaleUpAnim(InstaMateriaL_Activity.class, mContext, view);
+
         }
     }
 
@@ -151,9 +179,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     //navigationitemselected Listener
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
-
         menuItem.setChecked(true);
-
 //        mDrawerlayout.closeDrawers();//关闭抽屉
         return true;
     }
@@ -165,29 +191,5 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-    /**
-     * 监听抽屉 editText变化的
-     */
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-        if (s.length() > 4) {
-            textInput.setErrorEnabled(true);//为true显示
-            textInput.setError("姓名长度不能超过4个");
-        } else {
-            textInput.setErrorEnabled(false);//反之
-        }
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-
     }
 }

@@ -1,48 +1,25 @@
 package com.cui.trypro.utils;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Point;
-import android.os.Build;
-import android.view.Display;
-import android.view.WindowManager;
+import android.support.design.widget.Snackbar;
+import android.view.View;
 
 /**
- * Created by froger_mcs on 05.11.14.
+ * Created by cuiyang on 15/8/26.
  */
 public class Utils {
-    private static int screenWidth = 0;
-    private static int screenHeight = 0;
 
-    public static int dpToPx(int dp) {
-        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
+
+    public static void showSnackbar(View v, String txt, String right) {
+        Snackbar.make(v, txt, Snackbar.LENGTH_LONG)
+                .setAction(right, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                })
+//                .setActionTextColor(R.color.green)
+//                .setDuration(3000)
+                .show(); // Don’t forget to show!
+
     }
 
-    public static int getScreenHeight(Context c) {
-        if (screenHeight == 0) {
-            WindowManager wm = (WindowManager) c.getSystemService(Context.WINDOW_SERVICE);
-            Display display = wm.getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            screenHeight = size.y;
-        }
-
-        return screenHeight;
-    }
-
-    public static int getScreenWidth(Context c) {
-        if (screenWidth == 0) {
-            WindowManager wm = (WindowManager) c.getSystemService(Context.WINDOW_SERVICE);
-            Display display = wm.getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            screenWidth = size.x;
-        }
-
-        return screenWidth;
-    }
-
-    public static boolean isAndroid5() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
-    }
 }
