@@ -63,7 +63,7 @@
                 android:id="@+id/btnLike"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/btn_feed_action"
                 android:src="@drawable/ic_heart_outline_grey"/>
 
             <ImageButton
@@ -91,15 +91,26 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_heart_small_blue"/>
 
-                <TextView
+                <TextSwitcher
                     android:id="@+id/tsLikesCounter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="123 likes"
-                    android:textColor="@color/text_like_counter"
-                    />
+                    android:inAnimation="@anim/slide_in_likes_counter"
+                    android:outAnimation="@anim/slide_out_likes_counter">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123 likes"
+                        android:textColor="@color/text_like_counter" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_like_counter" />
+                </TextSwitcher>
             </LinearLayout>
         </LinearLayout>
 

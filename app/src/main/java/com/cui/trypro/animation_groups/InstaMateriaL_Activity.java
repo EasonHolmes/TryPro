@@ -3,6 +3,7 @@ package com.cui.trypro.animation_groups;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
 import com.cui.trypro.View.circlerefreshlayout.Utils;
 import com.cui.trypro.adapter.Animation_groups_adapter;
 import com.cui.trypro.adapter.FeedAdapter;
+import com.cui.trypro.animation_groups.instaMaterial_view.FeedContextMenu;
+import com.cui.trypro.animation_groups.instaMaterial_view.FeedContextMenuManager;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -31,7 +34,8 @@ import butterknife.InjectView;
 /**
  * Created by cuiyang on 15/8/16.
  */
-public class InstaMateriaL_Activity extends BaseActivity {
+public class InstaMateriaL_Activity extends BaseActivity implements FeedAdapter.OnFeedItemClickListener,
+        FeedContextMenu.OnFeedContextMenuItemClickListener {
 
 
     @InjectView(R.id.rvFeed)
@@ -61,8 +65,6 @@ public class InstaMateriaL_Activity extends BaseActivity {
         ButterKnife.inject(this);
         mContext = this;
         initView();
-
-
     }
 
     private void initView() {
@@ -76,6 +78,13 @@ public class InstaMateriaL_Activity extends BaseActivity {
             public void onClick(View v) {
                 Snackbar.make(mRecyclerView, "content", Snackbar.LENGTH_LONG)
                         .setAction("right", null).show();
+            }
+        });
+        adapter.setOnFeedItemClickListener(this);
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                FeedContextMenuManager.getInstance().onScrolled(recyclerView, dx, dy);
             }
         });
     }
@@ -128,7 +137,6 @@ public class InstaMateriaL_Activity extends BaseActivity {
 //                .start();
     }
 
-    //
     private void startFabAnimation() {
         fabCreate.animate()
                 .translationY(0)
@@ -136,7 +144,44 @@ public class InstaMateriaL_Activity extends BaseActivity {
                 .setStartDelay(300)
                 .setDuration(ANIM_DURATION_FAB)
                 .start();
-        adapter.updateItem();
+        adapter.updateItem();//adapter add data
+    }
+
+    //adapter里的回调
+    @Override
+    public void onCommentsClick(View v, int position) {
+    }
+
+    @Override
+    public void onMoreClick(View v, int position) {
+        FeedContextMenuManager.getInstance().toggleContextMenuFromView(v, position, this);
+    }
+
+    @Override
+    public void onProfileClick(View v) {
+
+    }
+
+
+    //评论界面里的回调
+    @Override
+    public void onReportClick(int feedItem) {
+
+    }
+
+    @Override
+    public void onSharePhotoClick(int feedItem) {
+
+    }
+
+    @Override
+    public void onCopyShareUrlClick(int feedItem) {
+
+    }
+
+    @Override
+    public void onCancelClick(int feedItem) {
+
     }
 //
 //    @Override

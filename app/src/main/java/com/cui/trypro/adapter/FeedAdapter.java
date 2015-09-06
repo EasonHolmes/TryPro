@@ -6,6 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -24,6 +26,7 @@ import com.cui.trypro.R;
 import com.cui.trypro.View.circlerefreshlayout.Utils;
 import com.cui.trypro.widget.SendingProgressView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,10 +44,13 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
     private int itemsCount = 0;
 
     //随机给加like的
-    private SparseIntArray map = new SparseIntArray();
+    private SparseIntArray likeCount = new SparseIntArray();
     //纪录是否点过like的
     private SparseArray isClickLike = new SparseArray();
 
+
+    //回调
+    OnFeedItemClickListener onFeedItemClickListener;
 
     /**
      * 补间器
@@ -53,8 +59,15 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
     private static final AccelerateInterpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
     private static final OvershootInterpolator OVERSHOOT_INTERPOLATOR = new OvershootInterpolator(4);
 
-    private final Map<RecyclerView.ViewHolder, AnimatorSet> likeAnimations = new HashMap<>();
 
+    /**
+     * 保存animatorSet来判断防止收藏被点两次
+     */
+    private final Map<RecyclerView.ViewHolder, AnimatorSet> likeAnimations = new HashMap<>();
+    /**
+     * 记录点击过收藏的position 防止再次图片点击被收藏爱心也被收藏
+     */
+    private final ArrayList<Integer> likedPositions = new ArrayList<>();
 
     public FeedAdapter(Context mContext) {
         this.mContext = mContext;
@@ -72,6 +85,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
         runEnterAnimation(holder.itemView, position);
         bindDefaultFeedItem(holder, position);
         holder.ivFeedCenter.setOnClickListener(this);
+        holder.btnLike.setOnClickListener(this);
+        holder.btnComments.setOnClickListener(this);
+        holder.btnMore.setOnClickListener(this);
     }
 
 
@@ -84,13 +100,46 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ivFeedCenter:
-                animatePhotoLike((ViewHolder) v.getTag());
+                ViewHolder holder1 = (ViewHolder) v.getTag();
+                if (!likedPositions.contains(holder1.getPosition())) {//如果没被点击过
+                    likedPositions.add(holder1.getPosition());//加入被点击的position
+                    updateHeartButton((ViewHolder) v.getTag(), false);
+                    animatePhotoLike((ViewHolder) v.getTag());
+                    updateLikesCounter(holder1, true);
+                }
+                break;
+            case R.id.btnLike:
+                ViewHolder holder2 = (ViewHolder) v.getTag();
+                if (!likedPositions.contains(holder2.getPosition())) {
+                    likedPositions.add(holder2.getPosition());
+                    updateHeartButton((ViewHolder) v.getTag(), true);
+                    updateLikesCounter(holder2, true);
+                }
+                break;
+            case R.id.btnComments:
+                if (onFeedItemClickListener != null) {
+                    onFeedItemClickListener.onCommentsClick(v, (Integer) v.getTag());
+                }
+                break;
+            case R.id.btnMore:
+                if (onFeedItemClickListener != null) {
+                    onFeedItemClickListener.onMoreClick(v, (Integer) v.getTag());
+                }
+                break;
+            case R.id.ivUserProfile:
+                if (onFeedItemClickListener != null) {
+                    onFeedItemClickListener.onProfileClick(v);
+                }
                 break;
         }
     }
 
+
+    /**
+     * 点击中间的图片
+     */
     private void animatePhotoLike(final ViewHolder holder) {
-        if (!likeAnimations.containsKey(holder)) {
+        if (!likeAnimations.containsKey(holder)) {//有put进去就是收藏过的不播放动画
             holder.vBgLike.setVisibility(View.VISIBLE);
             holder.ivLike.setVisibility(View.VISIBLE);
 
@@ -101,7 +150,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
             holder.ivLike.setScaleX(0.1f);
 
             AnimatorSet animatorSet = new AnimatorSet();
-            likeAnimations.put(holder, animatorSet);
+            likeAnimations.put(holder, animatorSet);//把animatorSet 放进去用来做对比
 
             ObjectAnimator bgScaleYAnim = ObjectAnimator.ofFloat(holder.vBgLike, "scaleY", 0.1f, 1f);
             bgScaleYAnim.setDuration(200);
@@ -131,22 +180,46 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
             animatorSet.playTogether(bgScaleYAnim, bgScaleXAnim, bgAlphaAnim, imgScaleUpYAnim, imgScaleUpXAnim);
             animatorSet.play(imgScaleDownYAnim).with(imgScaleDownXAnim).after(imgScaleUpYAnim);
 
-//            animatorSet.addListener(new AnimatorListenerAdapter() {
-//                @Override
-//                public void onAnimationEnd(Animator animation) {
+            animatorSet.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
 //                    resetLikeAnimationState(holder);
-//                }
-//            });
+                }
+            });
             animatorSet.start();
         }
     }
 
+    private void resetLikeAnimationState(ViewHolder holder) {
+        likeAnimations.remove(holder);//删除animatort再点就能再出来
+        holder.vBgLike.setVisibility(View.GONE);
+        holder.ivLike.setVisibility(View.GONE);
+    }
+
+    /**
+     * 初始化数据
+     */
     public void updateItem() {
         itemsCount = 20;
+        //随机给不同的like数量
         for (int i = 0; i < itemsCount; i++) {
-            map.put(i, new Random().nextInt(100));
+            likeCount.put(i, new Random().nextInt(100));
         }
         notifyDataSetChanged();
+    }
+
+    /**
+     * 改变like总数 textSwitcher
+     */
+    private void updateLikesCounter(ViewHolder holder, boolean animated) {
+        int likesCounts = likeCount.get(holder.getPosition()) + 1;//根据position拿初始化放进去的数字再加1
+        String likeCountText = likesCounts + "   likes";
+        if (animated) {
+            holder.tsLikesCounter.setText(likeCountText);
+        } else {
+            holder.tsLikesCounter.setCurrentText(likeCountText);
+        }
+        likeCount.put(holder.getPosition(), likesCounts);//保存下来用以统计，
     }
 
     /**
@@ -176,9 +249,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
             holder.ivFeedBottom.setImageResource(R.drawable.img_feed_bottom_2);
         }
 
-//        updateLikesCounter(holder, false);
-//        updateHeartButton(holder, false);
-
+        updateLikesCounter(holder, false);
         //把Viewholder放入方便后面使用
         holder.btnComments.setTag(position);
         holder.btnMore.setTag(position);
@@ -187,9 +258,53 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
         if (likeAnimations.containsKey(holder)) {
             likeAnimations.get(holder).cancel();
         }
+        resetLikeAnimationState(holder);
+    }
 
-//        resetLikeAnimationState(holder);
+    /**
+     * 更新收藏爱心
+     *
+     * @param animatored 是否做动画
+     */
+    private void updateHeartButton(final ViewHolder holder, boolean animatored) {
+        if (animatored) {
+            if (!likeAnimations.containsKey(holder)) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                likeAnimations.put(holder, animatorSet);
 
+                ObjectAnimator rotationAnim = ObjectAnimator.ofFloat(holder.btnLike, "rotation", 0f, 360f);
+                rotationAnim.setDuration(300);
+                rotationAnim.setInterpolator(ACCELERATE_INTERPOLATOR);
+
+                ObjectAnimator bounceAnimX = ObjectAnimator.ofFloat(holder.btnLike, "scaleX", 0.2f, 1f);
+                bounceAnimX.setDuration(300);
+                bounceAnimX.setInterpolator(OVERSHOOT_INTERPOLATOR);
+
+                ObjectAnimator bounceAnimY = ObjectAnimator.ofFloat(holder.btnLike, "scaleY", 0.2f, 1f);
+                bounceAnimY.setDuration(300);
+                bounceAnimY.setInterpolator(OVERSHOOT_INTERPOLATOR);
+                bounceAnimY.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        holder.btnLike.setImageResource(R.drawable.ic_heart_red);
+                    }
+                });
+                animatorSet.play(bounceAnimX).with(bounceAnimY).after(rotationAnim);
+                animatorSet.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        resetLikeAnimationState(holder);
+                    }
+                });
+                animatorSet.start();
+            }
+        } else {
+            if (likedPositions.contains(holder.getPosition())) {
+                holder.btnLike.setImageResource(R.drawable.ic_heart_red);
+            } else {
+                holder.btnLike.setImageResource(R.drawable.ic_heart_outline_grey);
+            }
+        }
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -208,7 +323,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
         @InjectView(R.id.ivLike)
         ImageView ivLike;
         @InjectView(R.id.tsLikesCounter)
-        TextView tsLikesCounter;
+        TextSwitcher tsLikesCounter;
         @InjectView(R.id.ivUserProfile)
         ImageView ivUserProfile;
         @InjectView(R.id.vImageRoot)
@@ -221,6 +336,25 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
             super(view);
             ButterKnife.inject(this, view);
         }
+    }
+
+
+    /**
+     * 对外提供方法
+     */
+    public void setOnFeedItemClickListener(OnFeedItemClickListener onFeedItemClickListener) {
+        this.onFeedItemClickListener = onFeedItemClickListener;
+    }
+
+    /**
+     * 让外部需要实现的方法这样能就把值传回去
+     */
+    public interface OnFeedItemClickListener {
+        public void onCommentsClick(View v, int position);
+
+        public void onMoreClick(View v, int position);
+
+        public void onProfileClick(View v);
 
     }
 }

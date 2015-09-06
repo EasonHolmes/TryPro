@@ -42,4 +42,17 @@
         <!--<item name="android:wallpaperIntraCloseEnterAnimation">@anim/slide_in_right</item>-->
         <!--<item name="android:wallpaperIntraCloseExitAnimation">@anim/slide_out_right</item>-->
     <!--</style>-->
+
+
+<!--制作统一的文字属性-->
+    <style name="ContextMenuButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textColor">@color/toolbar_background2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>

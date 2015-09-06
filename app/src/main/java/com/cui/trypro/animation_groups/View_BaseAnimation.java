@@ -1,9 +1,14 @@
 package com.cui.trypro.animation_groups;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
+import android.view.animation.OvershootInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.TextView;
 
 import com.cui.trypro.BaseActivity;
@@ -20,6 +25,7 @@ import butterknife.InjectView;
  * translationX Y 平移
  * rotation 旋转
  * scale 翻转
+ * scaleX + scaleY 缩放
  * alpha
  * <p/>
  * <p/>
@@ -83,5 +89,33 @@ public class View_BaseAnimation extends BaseActivity {
         animSet.setInterpolator(new BounceInterpolator());
         animSet.setDuration(5000);
         animSet.start();
+    }
+
+    private void scale() {
+        /** 设置缩放动画 */
+        final ScaleAnimation animation = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        animation.setDuration(2000);//设置动画持续时间
+/** 常用方法 */
+//animation.setRepeatCount(int repeatCount);//设置重复次数
+//animation.setFillAfter(boolean);//动画执行完后是否停留在执行完的状态
+//animation.setStartOffset(long startOffset);//执行前的等待时间
+        animation.startNow();
+    }
+
+    private void scaleXY() {
+        /** 设置缩放动画 */
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        ObjectAnimator bounceAnimX = ObjectAnimator.ofFloat(txtBase, "scaleX", 0.2f, 1f);
+        bounceAnimX.setDuration(300);
+        bounceAnimX.setInterpolator(new OvershootInterpolator(4));
+
+        ObjectAnimator bounceAnimY = ObjectAnimator.ofFloat(txtBase, "scaleX", 0.2f, 1f);
+        bounceAnimX.setDuration(300);
+        bounceAnimX.setInterpolator(new OvershootInterpolator(4));
+        animatorSet.play(bounceAnimX).with(bounceAnimY);
+
+        animatorSet.start();
     }
 }
