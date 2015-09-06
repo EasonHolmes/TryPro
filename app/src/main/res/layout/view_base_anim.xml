@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
     android:orientation="vertical">
 
 
@@ -9,8 +10,27 @@
         android:id="@+id/txt_base"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="Eason'Cui"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_centerInParent="true"/>
+        android:textSize="20sp" />
+
+    <com.cui.trypro.widget.PointTypeEvaluatorView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.cui.trypro.widget.ColorTypeEvaluatorView
+        android:id="@+id/colorsss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:id="@+id/txt_basess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Eason'Cui"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 </RelativeLayout>

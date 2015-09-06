@@ -18,6 +18,10 @@ public class Utils {
         return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
 
+
+    /**
+     *获取屏幕高度
+     * */
     public static int getScreenHeight(Context c) {
         if (screenHeight == 0) {
             WindowManager wm = (WindowManager) c.getSystemService(Context.WINDOW_SERVICE);

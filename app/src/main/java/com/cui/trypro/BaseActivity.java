@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,19 +15,19 @@ import android.view.Window;
 import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
 import com.cui.trypro.activity_animation.activityOptionCS.transition.TransitionCompat;
 
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
-@SuppressLint("Registered")
-public class BaseActivity extends BaseSwipeBackActivity {
+
+public class BaseActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private DrawerLayout mDrawerlayout;
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 允许使用transitions 5.0才需要
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
     }
+
     protected void initToolbar(String title, boolean or) {
         //设置整个ToolBar  继承自BaseActivity
         //设定状态栏的颜色，当版本大于4.4时起作用
@@ -48,14 +49,13 @@ public class BaseActivity extends BaseSwipeBackActivity {
             mDrawerToggle.syncState();
             mDrawerlayout.setDrawerListener(mDrawerToggle);
         }
-
     }
 
-    protected void initAnimation() {
-        TransitionCompat.setAnimDuration(500);
-//         这段代码必须放在ActivityOptionsCompat各种设置之后
-        TransitionCompat.startTransition(this, R.layout.instamaterial);
-    }
+//    protected void initAnimation() {
+//        TransitionCompat.setAnimDuration(500);
+////         这段代码必须放在ActivityOptionsCompat各种设置之后
+//        TransitionCompat.startTransition(this, R.layout.instamaterial);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,23 +75,23 @@ public class BaseActivity extends BaseSwipeBackActivity {
     }
 
 
-    @Override
-    public void onBackPressed() {
-        /**
-         * //material onBackPressed用这两行代码
-         * */
+//    @Override
+//    public void onBackPressed() {
+    /**
+     * //material onBackPressed用这两行代码
+     * */
 //        注意onBackPressed()方法——这很重要。因为它让操作系统知道在关闭第二个activity之前要完成动画的执行。
 //        finishAfterTransition();
-        /**
-         * activityOPtionICs就这个
-         * */
-        super.onBackPressed();//activityOPtionICs不能用super要不失效
-        //TransitionCompat.setExitTransition(new MySceneAnim(this));//a test anim.Should not be use with customAnimation
-        //TransitionCompat.setAnimStartDelay(0);// default
+    /**
+     * activityOPtionICs就这个
+     * */
+//        super.onBackPressed();//activityOPtionICs不能用super要不失效
+    //TransitionCompat.setExitTransition(new MySceneAnim(this));//a test anim.Should not be use with customAnimation
+    //TransitionCompat.setAnimStartDelay(0);// default
 //        TransitionCompat.setAnimDuration(500);// default
-        //TransitionCompat.setTimeInterpolator(new AccelerateDecelerateInterpolator());// default
-        //TransitionCompat.finishAfterTransition(activity, enterAnim, exitAnim);// custom animation
-        // 这段代码必须放在ActivityOptionsCompat各种设置之后
+    //TransitionCompat.setTimeInterpolator(new AccelerateDecelerateInterpolator());// default
+    //TransitionCompat.finishAfterTransition(activity, enterAnim, exitAnim);// custom animation
+    // 这段代码必须放在ActivityOptionsCompat各种设置之后
 //        TransitionCompat.finishAfterTransition(this);
-    }
+//    }
 }

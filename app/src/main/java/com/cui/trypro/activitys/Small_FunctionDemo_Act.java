@@ -44,7 +44,6 @@ public class Small_FunctionDemo_Act extends BaseActivity {
         mContext = this;
         super.initToolbar("小功能Demo", true);
 
-
         initView();
     }
 

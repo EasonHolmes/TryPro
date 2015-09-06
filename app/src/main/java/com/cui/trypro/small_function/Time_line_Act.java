@@ -18,6 +18,7 @@ import android.widget.ImageView;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
+import com.cui.trypro.widget.CirclesView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class Time_line_Act extends BaseActivity {
 
 
     private Context mContext;
-    private List<Integer> list = new ArrayList<Integer>();
+    private List<String> list = new ArrayList<String>();
 
 
     @Override
@@ -46,6 +47,7 @@ public class Time_line_Act extends BaseActivity {
         mContext = this;
 
         initView();
+
     }
 
 
@@ -55,36 +57,31 @@ public class Time_line_Act extends BaseActivity {
         baseList.setAdapter(new SimpleAdapter());
 
     }
-
     private void initData() {
-        list.add(R.color.toolbar_background2);
-        list.add(R.color.black);
-        list.add(R.color.cardview_shadow_start_color);
-        list.add(R.color.red_btn_bg_pressed_color);
-        list.add(R.color.material_blue_500);
-        list.add(R.color.material_blue_grey_80);
-        list.add(R.color.material_blue_500);
-        list.add(R.color.material_blue_600);
-        list.add(R.color.material_blue_grey_900);
-        list.add(R.color.material_blue_grey_800);
-        list.add(R.color.switch_thumb_material_dark);
-        list.add(R.color.material_deep_teal_20);
-        list.add(R.color.secondary_text_default_material_light);
+       list.add("#BBBBBB");
+       list.add("#ff368adb");
+       list.add("#252c68");
+       list.add("#B847FF");
+       list.add("#F27474");
+       list.add("#11B7D1");
+       list.add("#ff1692d1");
+       list.add("#E1E0DE");
+       list.add("#FFC37DFF");
     }
 
     class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.Viewholder> {
         GradientDrawable gd;
 
         public SimpleAdapter() {
-            int strokeWidth = 1; // 3dp 边框宽度
-            int roundRadius = 50; // 8dp 圆角半径
-            int strokeColor = Color.parseColor("#ff9000");//边框颜色
-            int fillColor = Color.parseColor("#ff9000");//内部填充颜色
-
-            gd = new GradientDrawable();//创建drawable
-            gd.setColor(fillColor);
-            gd.setCornerRadius(roundRadius);
-            gd.setStroke(strokeWidth, strokeColor);
+//            int strokeWidth = 1; // 3dp 边框宽度
+//            int roundRadius = 50; // 8dp 圆角半径
+//            int strokeColor = Color.parseColor("#ff9000");//边框颜色
+//            int fillColor = Color.parseColor("#ff9000");//内部填充颜色
+//
+//            gd = new GradientDrawable();//创建drawable
+//            gd.setColor(fillColor);
+//            gd.setCornerRadius(roundRadius);
+//            gd.setStroke(strokeWidth, strokeColor);
 
         }
 
@@ -96,7 +93,13 @@ public class Time_line_Act extends BaseActivity {
 
         @Override
         public void onBindViewHolder(Viewholder holder, int position) {
-            holder.itemTimeCircle.setImageDrawable(gd);
+//            holder.itemTimeCircle.setImageDrawable(gd);
+            holder.itemTimeCircle.setColor(Color.parseColor(list.get(position)));
+            if(position == 0){
+                holder.itemTimeTopLine.setVisibility(View.INVISIBLE);
+            }else if(position == getItemCount()-1){
+                holder.itemTimeBottomeLine.setVisibility(View.INVISIBLE);
+            }
         }
 
         @Override
@@ -112,12 +115,12 @@ public class Time_line_Act extends BaseActivity {
 
         public class Viewholder extends RecyclerView.ViewHolder {
             View itemTimeTopLine;
-            ImageView itemTimeCircle;
+            CirclesView itemTimeCircle;
             View itemTimeBottomeLine;
 
             public Viewholder(View itemView) {
                 super(itemView);
-                itemTimeCircle = (ImageView) itemView.findViewById(R.id.item_time_circle);
+                itemTimeCircle = (CirclesView) itemView.findViewById(R.id.item_time_circle);
                 itemTimeTopLine = itemView.findViewById(R.id.item_time_top_line);
                 itemTimeBottomeLine = itemView.findViewById(R.id.item_time_bottome_line);
 

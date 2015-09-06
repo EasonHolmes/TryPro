@@ -1,7 +1,10 @@
 package com.cui.trypro.animation_groups;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -12,11 +15,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
+import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
+import com.cui.trypro.View.circlerefreshlayout.Utils;
 import com.cui.trypro.adapter.Animation_groups_adapter;
+import com.cui.trypro.adapter.FeedAdapter;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -41,8 +48,8 @@ public class InstaMateriaL_Activity extends BaseActivity {
     ImageView ivLogo;
 
     private Context mContext;
-    private Animation_groups_adapter adapter;
-    private MenuItem inboxMenuItem;
+    private FeedAdapter adapter;
+    //    private MenuItem inboxMenuItem;//侧滑栏的三个横线
     private static final int ANIM_DURATION_TOOLBAR = 300;
     private static final int ANIM_DURATION_FAB = 400;
 
@@ -53,7 +60,6 @@ public class InstaMateriaL_Activity extends BaseActivity {
         setContentView(R.layout.instamaterial);
         ButterKnife.inject(this);
         mContext = this;
-        super.initAnimation();
         initView();
 
 
@@ -61,27 +67,26 @@ public class InstaMateriaL_Activity extends BaseActivity {
 
     private void initView() {
         initToolbar();
-//        startIntroAnimation();
+        startIntroAnimation();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        adapter = new Animation_groups_adapter(null);
+        adapter = new FeedAdapter(mContext);
         mRecyclerView.setAdapter(adapter);
         fabCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Snackbar.make(mRecyclerView, "content", Snackbar.LENGTH_LONG)
-                        .setAction("right", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                            }
-                        })
-//                .setActionTextColor(R.color.green)
-//                .setDuration(3000)
-                        .show(); // Don’t forget to show!
+                        .setAction("right", null).show();
             }
         });
     }
 
     private void initToolbar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+            tintManager.setStatusBarTintEnabled(true);
+            //此处可以重新指定状态栏颜色
+            tintManager.setStatusBarTintResource(R.color.background_blue2);
+        }
         toolbar2.setTitle("material");
         toolbar2.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar2);
@@ -89,22 +94,27 @@ public class InstaMateriaL_Activity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-//    private void startIntroAnimation() {
-//        fabCreate.setTranslationY(2 * getResources().getDimensionPixelOffset(R.dimen.btn_fab_size));
-//
-//        int actionbarSize = Utils.dpToPx(56);
-//        toolbar2.setTranslationY(-actionbarSize);
-//        ivLogo.setTranslationY(-actionbarSize);
+    private void startIntroAnimation() {
+        /**设置初始fab位置*/
+        fabCreate.setTranslationY(2 * getResources().getDimensionPixelOffset(R.dimen.btn_fab_size));
+        int actionbarSize = Utils.dpToPx(56);
+        toolbar2.setTranslationY(-actionbarSize);
+        ivLogo.setTranslationY(-actionbarSize);
 //        inboxMenuItem.getActionView().setTranslationY(-actionbarSize);
-//
-//        toolbar2.animate()
-//                .translationY(0)
-//                .setDuration(ANIM_DURATION_TOOLBAR)
-//                .setStartDelay(300);
-//        ivLogo.animate()
-//                .translationY(0)
-//                .setDuration(ANIM_DURATION_TOOLBAR)
-//                .setStartDelay(400);
+        toolbar2.animate()
+                .translationY(0)
+                .setDuration(ANIM_DURATION_TOOLBAR)
+                .setStartDelay(300);//设置延迟时间
+        ivLogo.animate()
+                .translationY(0)
+                .setDuration(ANIM_DURATION_TOOLBAR)
+                .setStartDelay(400).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                startFabAnimation();
+            }
+        });
 //        inboxMenuItem.getActionView().animate()
 //                .translationY(0)
 //                .setDuration(ANIM_DURATION_TOOLBAR)
@@ -116,17 +126,18 @@ public class InstaMateriaL_Activity extends BaseActivity {
 //                    }
 //                })
 //                .start();
-//    }
-//
-//    private void startContentAnimation() {
-//        fabCreate.animate()
-//                .translationY(0)
-//                .setInterpolator(new OvershootInterpolator(1.f))
-//                .setStartDelay(300)
-//                .setDuration(ANIM_DURATION_FAB)
-//                .start();
-////        adapter.updateItems(true);
-//    }
+    }
+
+    //
+    private void startFabAnimation() {
+        fabCreate.animate()
+                .translationY(0)
+                .setInterpolator(new OvershootInterpolator(1.f))
+                .setStartDelay(300)
+                .setDuration(ANIM_DURATION_FAB)
+                .start();
+        adapter.updateItem();
+    }
 //
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {

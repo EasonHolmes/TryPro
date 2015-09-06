@@ -1,78 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cui.trypro">
+<manifest
+    package="com.cui.trypro"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/JK.SwipeBack.Transparent.Theme">
+        android:theme="@style/ActionBarTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".WelActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
 
         <!--View动画集合start-->
         <activity
             android:name=".animation_groups.ReboundActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".animation_groups.InstaMateriaL_Activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activitys.Animation_Groups__Activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".animation_groups.View_BaseAnimation"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <!--View动画集合end-->
 
 
         <!--activity转场集合start-->
         <activity
             android:name=".activity_animation.ZhiHuActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activitys.Activity_Animation_Act"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_animation.GifActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_animation.AndroidL_NewApi"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_animation.MyOptionICS"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <!--activity转场集合end-->
 
         <!--一些功能demo合集start-->
         <activity
             android:name=".activitys.Small_FunctionDemo_Act"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".small_function.Time_line_Act"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".small_function.SVG_act"
+        <activity
+            android:name=".small_function.SVG_act"
             android:screenOrientation="portrait"/>
         <!--一些功能demo合集end-->
 
 
         <!--layotucast_Start-->
-        <activity android:name="com.github.mmin18.layoutcast.ResetActivity" />
+        <activity android:name="com.github.mmin18.layoutcast.ResetActivity"/>
         <!--layotucast_end-->
 
     </application>

@@ -1,12 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'cuiyang'
+            keyPassword 'jvyshow'
+            storeFile file('/Users/cuiyang/Documents/work/cuiyang.jks')
+            storePassword 'jvyshow'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "22.0.1"
-
     defaultConfig {
         applicationId "com.cui.trypro"
-        minSdkVersion 21
+        minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -15,6 +22,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
     sourceSets {
@@ -32,8 +43,9 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.android.support:cardview-v7:22.2.0'
     compile 'com.android.support:palette-v7:22.2.0'
-    //颜色提取的
 
+    compile project(":SlidingLibrary")
+    //颜色提取的
     //google design L 中的一些控件
     compile 'com.jakewharton:butterknife:6.1.0'
     //注解findviewbyid
@@ -42,7 +54,7 @@ dependencies {
     compile files('libs/GifView.jar')
     //gif控件
     compile 'com.github.mmin18.layoutcast:library:1.+@aar'
-    //只上传变更代码 的
+    //只上传变更代码的
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     //material_edittext
     compile 'com.squareup.picasso:picasso:2.5.2'
@@ -50,4 +62,6 @@ dependencies {
     compile 'com.balysv:material-ripple:1.0.2'
     //水波纹
     compile 'com.eftimoff:android-pathview:1.0.6@aar'
+
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
 }

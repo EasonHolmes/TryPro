@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 
 import com.cui.trypro.BaseActivity;
@@ -22,6 +23,8 @@ import butterknife.ButterKnife;
 public class MyOptionICS extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // 允许使用transitions 5.0才需要
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.option_ics_act);
         ButterKnife.inject(this);
@@ -76,8 +79,6 @@ public class MyOptionICS extends BaseActivity {
                 // TODO:onEnd
             }
         });
-
-
         /**进入的动画配置*/
 //        TransitionCompat.setEnterTransition(new SceneFade(MyOptionICS.this));// use to scale Up animation
 //        TransitionCompat.setAnimDuration(1000);// default
@@ -87,7 +88,10 @@ public class MyOptionICS extends BaseActivity {
 //         这段代码必须放在ActivityOptionsCompat各种设置之后
         TransitionCompat.startTransition(this, R.layout.option_ics_act);
     }
-    /**返回的动画配置*/
+
+    /**
+     * 返回的动画配置
+     */
 
     @Override
     public void onBackPressed() {
@@ -99,6 +103,5 @@ public class MyOptionICS extends BaseActivity {
         //TransitionCompat.finishAfterTransition(activity, enterAnim, exitAnim);// custom animation
         // 这段代码必须放在ActivityOptionsCompat各种设置之后
         TransitionCompat.finishAfterTransition(this);
-
     }
 }

@@ -31,7 +31,7 @@ import com.cui.trypro.utils.Utils;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
 
 
     @InjectView(R.id.main_list)
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Toolbar mToolBar;
 
     private ActionBarDrawerToggle mDrawerToggle;
-    private String[] animation = {"Rebound使用", "Activity转场动画", "Material_Library", "小功能demo",
+    private String[] animation = {"Rebound使用", "Activity转场动画", "Material_animation", "小功能demo",
             "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress",
             "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation",
             "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
@@ -76,9 +76,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         mContext = this;
-        /**先加载mainactivity再加载welactivity这样过度就有知乎的效果了*/
-        startActivity(new Intent(mContext, WelActivity.class));
-        initToolbar();
+        super.initToolbar("",true);
         initView();
 
     }
@@ -111,29 +109,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 visiPostion = visibleItemCount;//最后一个item进行刷新
             }
         });
+        /**先加载mainactivity再加载welactivity这样过度就有知乎的效果了*/
+        startActivity(new Intent(mContext, WelActivity.class));
     }
-
-    private void initToolbar() {
-        //设置整个ToolBar  继承自BaseActivity
-        //设定状态栏的颜色，当版本大于4.4时起作用
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-            tintManager.setStatusBarTintEnabled(true);
-            //此处可以重新指定状态栏颜色
-            tintManager.setStatusBarTintResource(R.color.background_blue2);
-        }
-        mToolBar.setTitle("");//设置左上角标题的，默认是APP的名字
-        mToolBar.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(mToolBar);
-        getSupportActionBar().setHomeButtonEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        mDrawerlayout = (DrawerLayout) findViewById(R.id.mDrawerlayout);
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerlayout, mToolBar, R.string.open, R.string.close);
-        mDrawerToggle.syncState();
-        mDrawerlayout.setDrawerListener(mDrawerToggle);
-    }
-
-
     /**
      * 加载更多
      */
@@ -158,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 1:
                 nextActivity(Activity_Animation_Act.class);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
+//                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
                 break;
             case 2:
 //                Material_Library_animation

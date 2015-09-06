@@ -20,7 +20,7 @@
             android:background="@color/gray_line" />
 
 
-        <ImageView
+        <com.cui.trypro.widget.CirclesView
             android:id="@+id/item_time_circle"
             android:layout_width="35dp"
             android:layout_height="35dp"

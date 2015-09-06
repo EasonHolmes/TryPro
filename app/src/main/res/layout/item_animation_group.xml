@@ -5,6 +5,7 @@
     android:layout_height="wrap_content">
 
 
+    <!--com.balysv.materialripple.MaterialRippleLayout会截获子布局的点击事件-->
     <com.balysv.materialripple.MaterialRippleLayout
         android:id="@+id/ripple"
         android:layout_width="match_parent"

@@ -1,18 +1,26 @@
 package com.cui.trypro.activitys;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.transition.Explode;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
@@ -22,6 +30,14 @@ import com.cui.trypro.activity_animation.MyOptionICS;
 import com.cui.trypro.activity_animation.ZhiHuActivity;
 import com.cui.trypro.activity_animation.activityOptionCS.ActivityCompatICS;
 import com.cui.trypro.activity_animation.activityOptionCS.ActivityOptionsCompatICS;
+import com.cui.trypro.adapter.Animation_groups_adapter;
+import com.cui.trypro.adapter.MyBaseAdapter;
+import com.cui.trypro.utils.RecyclerUtils;
+import com.cui.trypro.utils.RecyclerUtils.RecyclerItemClickListener;
+import com.cui.trypro.utils.RecyclerUtils.RecyclerItemClickListener.OnItemClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -29,9 +45,9 @@ import butterknife.InjectView;
 /**
  * activity转场动画示例
  */
-public class Activity_Animation_Act extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class Activity_Animation_Act extends BaseActivity implements View.OnClickListener, OnItemClickListener {
     @InjectView(R.id.simple_list)
-    ListView simpleList;
+    RecyclerView simpleList;
     @InjectView(R.id.btn_turn)
     Button btnTurn;
     @InjectView(R.id.img_te)
@@ -39,20 +55,21 @@ public class Activity_Animation_Act extends BaseActivity implements AdapterView.
     @InjectView(R.id.img_bujian)
     ImageView imgBujian;
 
-    private String s[] = {"知乎欢迎动画", "gif显示", "android_L_Animation", "optionICS从下到上的"};
     private Context mContext;
+    private List<String> list = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 允许使用transitions 
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplea_act);
         ButterKnife.inject(this);
         super.initToolbar("", true);
         mContext = this;
-        simpleList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, s));
-        simpleList.setOnItemClickListener(this);
+
+
+        simpleList.setLayoutManager(new LinearLayoutManager(mContext));
+        simpleList.setAdapter(new Animation_groups_adapter(initData()));
+        simpleList.addOnItemTouchListener(new RecyclerUtils.RecyclerItemClickListener(mContext, this));
 
         btnTurn.setText("optionICS点控件的缩放");
         btnTurn.setOnClickListener(this);
@@ -61,28 +78,12 @@ public class Activity_Animation_Act extends BaseActivity implements AdapterView.
         imgBujian.setOnClickListener(this);
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position) {
-            case 0:
-                nextActivity(ZhiHuActivity.class);
-                overridePendingTransition(R.anim.unzoom_in, R.anim.unzoom_out);//缩放
-                break;
-            case 1:
-                nextActivity(GifActivity.class);
-                overridePendingTransition(R.anim.small_2_big, R.anim.fade_out);//缩放另一种效果
-                break;
-            case 2:
-                getWindow().setEnterTransition(new Explode());// 设置一个endter transition
-                Intent i = new Intent();
-                i.setClass(mContext, AndroidL_NewApi.class);
-                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());//当你已经设置了允许使用Transition并设置了Transition动画，你就可以通过ActivityOptions.makeSceneTransitionAnimation()方法启动一个新的Activity来激活这个Transition：
-                break;
-            case 3:
-                customAnim();
-                break;
-        }
-
+    private List<String> initData() {
+        list.add("知乎欢迎动画");
+        list.add("gif显示");
+        list.add("android_L_Animation");
+        list.add("optionICS从下到上的");
+        return list;
     }
 
     /**
@@ -168,6 +169,30 @@ public class Activity_Animation_Act extends BaseActivity implements AdapterView.
                 break;
             case R.id.img_bujian:
                 screenTransitAnim(v, R.id.btn_bujian);//第二个共享元素的id
+                break;
+        }
+    }
+
+    @SuppressLint("NewApi")
+    @Override
+    public void onItemClick(View view, int position) {
+        switch (position) {
+            case 0:
+                nextActivity(ZhiHuActivity.class);
+                overridePendingTransition(R.anim.unzoom_in, R.anim.unzoom_out);//缩放
+                break;
+            case 1:
+//                nextActivity(GifActivity.class);
+//                overridePendingTransition(R.anim.small_2_big, R.anim.fade_out);//缩放另一种效果
+                break;
+            case 2:
+                getWindow().setEnterTransition(new Explode());// 设置一个endter transition
+                Intent i = new Intent();
+                i.setClass(mContext, AndroidL_NewApi.class);
+                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());//当你已经设置了允许使用Transition并设置了Transition动画，你就可以通过ActivityOptions.makeSceneTransitionAnimation()方法启动一个新的Activity来激活这个Transition：
+                break;
+            case 3:
+                customAnim();
                 break;
         }
     }

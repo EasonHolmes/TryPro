@@ -3,6 +3,7 @@ package com.cui.trypro.activitys;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
+import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
 import com.cui.trypro.adapter.Animation_groups_adapter;
 import com.cui.trypro.animation_groups.InstaMateriaL_Activity;
 import com.cui.trypro.animation_groups.View_BaseAnimation;
@@ -80,7 +82,6 @@ public class Animation_Groups__Activity extends BaseActivity {
             public void onItemClick(View view, int position) {
                 switch (position) {
                     case 0:
-                        hand.obtainMessage(TOAST, "click:" + position).sendToTarget();
                         startActivity(new Intent(mContext, InstaMateriaL_Activity.class));
                         break;
                     case 1:
@@ -92,6 +93,12 @@ public class Animation_Groups__Activity extends BaseActivity {
     }
 
     private void initHeader() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+            tintManager.setStatusBarTintEnabled(true);
+            //此处可以重新指定状态栏颜色
+            tintManager.setStatusBarTintResource(R.color.background_blue2);
+        }
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -101,14 +108,14 @@ public class Animation_Groups__Activity extends BaseActivity {
             }
         });
         //使用CollapsingToolbarLayout必须把title设置到CollapsingToolbarLayout上，设置到Toolbar上则不会显示
-        mCollapsingToolbarLayout.setTitle("Material_Library");
+        mCollapsingToolbarLayout.setTitle("Material_animation");
         //通过CollapsingToolbarLayout修改字体颜色
         mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);//设置还没收缩时状态下字体颜色
         mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.GREEN);//设置收缩后Toolbar上字体的颜色
     }
 
     private List<String> initData() {
-        list.add("Toolbar随列表滚动");
+        list.add("Toolbar随列表滚动IntaMaterial");
         list.add("anroid属性动画使用");
         return list;
     }

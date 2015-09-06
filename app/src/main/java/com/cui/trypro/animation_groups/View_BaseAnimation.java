@@ -3,10 +3,12 @@ package com.cui.trypro.animation_groups;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.view.animation.BounceInterpolator;
 import android.widget.TextView;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
+import com.cui.trypro.widget.ColorTypeEvaluatorView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -31,6 +33,16 @@ import butterknife.InjectView;
 public class View_BaseAnimation extends BaseActivity {
     @InjectView(R.id.txt_base)
     TextView txtBase;
+    @InjectView(R.id.colorsss)
+    ColorTypeEvaluatorView colorsss;
+    @InjectView(R.id.txt_basess)
+    TextView txtBasess;
+
+    /**
+     * 两个球是自定义的view
+     * ColorTypeEvaluatorView
+     * PointTypeEvaluatorView
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +50,38 @@ public class View_BaseAnimation extends BaseActivity {
         setContentView(R.layout.view_base_anim);
         ButterKnife.inject(this);
 
+        baseUse();
 
+        /**
+         *  ViewPropertyAnimator
+         *  让view 从原点开始到某个点
+         * */
+        txtBasess.animate().x(500).y(500).setDuration(5000)
+                .setInterpolator(new BounceInterpolator());
+
+    }
+
+    /**
+     * 基本用法
+     * <p/>
+     * /如果是多个动画按上面这样播放会给每个objectAnimator分别每个动画都有加不是整体
+     * animSet.setInterpolator();设置补间器默认是AccelerateDecelerateInterpolator。先加速再减速
+     * new AccelerateInterpolator(2f)2f加速倍数/
+     * new BounceInterpolator()模拟物理规律有回弹
+     * DecelerateInterpolator(2f)2f减速倍数
+     * OvershootInterpolator(1f)表示向前甩一定值后再回到原来位置
+     * AnticipateOvershootInterpolator(1f)：表示开始的时候向后然后向前甩一定值后返回最后的值
+     * CycleInterpolator：表示动画循环播放特定的次数，速率改变沿着正弦曲线。
+     * LinearInterpolator：表示以常量速率改变。
+     */
+    private void baseUse() {
         ObjectAnimator moveIn = ObjectAnimator.ofFloat(txtBase, "translationX", -500f, 0f);
         ObjectAnimator rotate = ObjectAnimator.ofFloat(txtBase, "rotation", 0f, 360f);
         ObjectAnimator fadeInOut = ObjectAnimator.ofFloat(txtBase, "alpha", 1f, 0f, 1f);
         AnimatorSet animSet = new AnimatorSet();
         animSet.play(rotate).with(fadeInOut).after(moveIn);
+        animSet.setInterpolator(new BounceInterpolator());
         animSet.setDuration(5000);
         animSet.start();
-
-
     }
 }

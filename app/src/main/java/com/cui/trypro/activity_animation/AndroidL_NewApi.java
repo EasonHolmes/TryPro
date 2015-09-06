@@ -1,5 +1,7 @@
 package com.cui.trypro.activity_animation;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.transition.Slide;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ import com.cui.trypro.R;
  */
 public class AndroidL_NewApi extends BaseActivity {
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS); // 允许使用transitions 
@@ -54,6 +57,7 @@ public class AndroidL_NewApi extends BaseActivity {
 //        });
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBackPressed() {//
         super.onBackPressed();

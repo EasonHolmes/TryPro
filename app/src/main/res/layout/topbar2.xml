@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.Toolbar
     android:id="@+id/toolbar2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
+    android:background="@color/background_blue"
     app:elevation="5dp"
     app:layout_scrollFlags="scroll|enterAlways"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
 
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_marginRight="45dp"
         android:scaleType="center"
-        android:src="@drawable/img_toolbar_logo" />
-</android.support.v7.widget.Toolbar><!--scroll - 想滚动就必须设置这个。
+        android:src="@drawable/img_toolbar_logo"/>
+</android.support.v7.widget.Toolbar>
+    <!--scroll - 想滚动就必须设置这个。
 
-enterAlways - 实现quick return效果, 当向下移动时，立即显示View（比如Toolbar)。
+    enterAlways - 实现quick return效果, 当向下移动时，立即显示View（比如Toolbar)。
 
-exitUntilCollapsed - 向上滚动时收缩View，但可以固定Toolbar一直在上面。
+    exitUntilCollapsed - 向上滚动时收缩View，但可以固定Toolbar一直在上面。
 
-enterAlwaysCollapsed - 当你的View已经设置minHeight属性又使用此标志时，
-你的View只能以最小高度进入，只有当滚动视图到达顶部时才扩大到完整高度。
+    enterAlwaysCollapsed - 当你的View已经设置minHeight属性又使用此标志时，
+    你的View只能以最小高度进入，只有当滚动视图到达顶部时才扩大到完整高度。
 
 
-contentScrim - 设置当完全CollapsingToolbarLayout折叠(收缩)后的背景颜色。
+    contentScrim - 设置当完全CollapsingToolbarLayout折叠(收缩)后的背景颜色。
 
-expandedTitleMarginStart - 设置扩张时候(还没有收缩时)title向左填充的距离。-->
+    expandedTitleMarginStart - 设置扩张时候(还没有收缩时)title向左填充的距离。-->
