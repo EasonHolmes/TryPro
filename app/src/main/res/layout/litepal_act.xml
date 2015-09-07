@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <include layout="@layout/topbar"/>
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_update_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="please edit content"
+        app:met_baseColor="@color/toolbar_background2"
+        app:met_errorColor="@color/error_color"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="test"
+        app:met_floatingLabelTextColor="@color/toolbar_background2"
+        app:met_minCharacters="5"
+        app:met_primaryColor="@color/background_blue2"
+        />
+    <!--app:met_accentTypeface="fonts/Roboto-LightItalic.ttf"自定义字体-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="增"/>
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删"/>
+
+        <Button
+            android:id="@+id/btn_upate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="改"/>
+
+        <Button
+            android:id="@+id/btn_select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="查"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_preview"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/toolbar_background2"
+        android:textSize="20dp"/>
+
+
+</LinearLayout>

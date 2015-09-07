@@ -3,5 +3,8 @@
     <string name="action_settings">设置</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
-
+    <plurals name="likes_count">
+        <item quantity="one">%d like</item>
+        <item quantity="other">%d likes</item>
+    </plurals>
 </resources>

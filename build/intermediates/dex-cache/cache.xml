@@ -23,6 +23,13 @@
         <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-308c6e8a3f97695c26dd7eeff84c31a0957c9c44.jar" />
     </item>
     <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/org.litepal.android/core/1.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b70a73bc9ab5b1e40f29d40c752f0d43fc54808b">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-3b350eb10ec39d01a11304eb896a56f060bb5e3c.jar" />
+    </item>
+    <item
         jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.eftimoff/android-pathview/1.0.6/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -68,7 +75,7 @@
         jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/TryPro/SlidingLibrary/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="2cb86272f366500d05f360b3f01886f7443e92fc">
+        sha1="015e542e1a93f3a29a9ed1226f44ba7776af0e28">
         <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-ddbbe85bd1207aa251fca28096dc8bb52042450b.jar" />
     </item>
     <item

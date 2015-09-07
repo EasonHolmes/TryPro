@@ -64,4 +64,8 @@ dependencies {
     compile 'com.eftimoff:android-pathview:1.0.6@aar'
 
     compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    //手势返回。类似微信
+
+    compile 'org.litepal.android:core:1.2.1'
+    //litepal   ORM数据库
 }

@@ -23,6 +23,7 @@ import android.widget.ListView;
 
 import com.cui.trypro.activitys.Activity_Animation_Act;
 import com.cui.trypro.activitys.Animation_Groups__Activity;
+import com.cui.trypro.activitys.LitePalTestActivity;
 import com.cui.trypro.activitys.Small_FunctionDemo_Act;
 import com.cui.trypro.animation_groups.ReboundActivity;
 import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
@@ -45,7 +46,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     private ActionBarDrawerToggle mDrawerToggle;
     private String[] animation = {"Rebound使用", "Activity转场动画", "Material_animation", "小功能demo",
-            "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress",
+            "LitePal使用", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress",
             "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation",
             "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
 
@@ -76,7 +77,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         mContext = this;
-        super.initToolbar("",true);
+        super.initToolbar("", true);
         initView();
 
     }
@@ -112,6 +113,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         /**先加载mainactivity再加载welactivity这样过度就有知乎的效果了*/
         startActivity(new Intent(mContext, WelActivity.class));
     }
+
     /**
      * 加载更多
      */
@@ -144,6 +146,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 3:
                 Utils.nextAct(mContext, Small_FunctionDemo_Act.class);
+            case 4:
+                Utils.nextAct(mContext, LitePalTestActivity.class);
+                break;
 
         }
     }

@@ -15,12 +15,10 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
-import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
-import android.widget.TextView;
 
 import com.cui.trypro.R;
 import com.cui.trypro.View.circlerefreshlayout.Utils;
@@ -28,7 +26,6 @@ import com.cui.trypro.widget.SendingProgressView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -41,17 +38,12 @@ import butterknife.InjectView;
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> implements View.OnClickListener {
 
     private Context mContext;
-    private int itemsCount = 0;
+    private int itemsCount = 0;//item总数
 
     //随机给加like的
     private SparseIntArray likeCount = new SparseIntArray();
-    //纪录是否点过like的
-    private SparseArray isClickLike = new SparseArray();
-
-
     //回调
     OnFeedItemClickListener onFeedItemClickListener;
-
     /**
      * 补间器
      */
@@ -59,15 +51,17 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
     private static final AccelerateInterpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
     private static final OvershootInterpolator OVERSHOOT_INTERPOLATOR = new OvershootInterpolator(4);
 
-
     /**
      * 保存animatorSet来判断防止收藏被点两次
      */
     private final Map<RecyclerView.ViewHolder, AnimatorSet> likeAnimations = new HashMap<>();
     /**
-     * 记录点击过收藏的position 防止再次图片点击被收藏爱心也被收藏
+     * 记录点击过收藏的position 防止再次收藏 同时onbind..方法会不停执行bindDefaultFeedItem里的updateHeartButton方法
+     * 会一直判断是否是点击过的position如果点击过的就显示收藏否则反之。以此避免复用问题
      */
     private final ArrayList<Integer> likedPositions = new ArrayList<>();
+
+    boolean isOne = true;//第一次进入才进行动画的判断
 
     public FeedAdapter(Context mContext) {
         this.mContext = mContext;
@@ -82,7 +76,8 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        runEnterAnimation(holder.itemView, position);
+        final ViewHolder holder1 = holder;
+        runEnterAnimation(holder1.itemView, position);
         bindDefaultFeedItem(holder, position);
         holder.ivFeedCenter.setOnClickListener(this);
         holder.btnLike.setOnClickListener(this);
@@ -112,7 +107,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
                 ViewHolder holder2 = (ViewHolder) v.getTag();
                 if (!likedPositions.contains(holder2.getPosition())) {
                     likedPositions.add(holder2.getPosition());
-                    updateHeartButton((ViewHolder) v.getTag(), true);
+                    updateHeartButton(holder2, true);
                     updateLikesCounter(holder2, true);
                 }
                 break;
@@ -226,15 +221,15 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
      * 初始让第一个（可见）item有动画
      */
     private void runEnterAnimation(View view, int position) {
-        if (position > 0) {
-            return;
+        if (isOne && position == 0) {
+            view.setTranslationY(Utils.getScreenHeight(mContext));
+            view.animate()
+                    .translationY(0)
+                    .setInterpolator(new DecelerateInterpolator(3.f))
+                    .setDuration(700)
+                    .start();
+            isOne = false;
         }
-        view.setTranslationY(Utils.getScreenHeight(mContext));
-        view.animate()
-                .translationY(0)
-                .setInterpolator(new DecelerateInterpolator(3.f))
-                .setDuration(700)
-                .start();
     }
 
     /**
@@ -248,13 +243,15 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
             holder.ivFeedCenter.setImageResource(R.drawable.item_feed_center_2);
             holder.ivFeedBottom.setImageResource(R.drawable.img_feed_bottom_2);
         }
-
         updateLikesCounter(holder, false);
+        updateHeartButton(holder, false);
+
         //把Viewholder放入方便后面使用
         holder.btnComments.setTag(position);
         holder.btnMore.setTag(position);
         holder.ivFeedCenter.setTag(holder);
         holder.btnLike.setTag(holder);
+
         if (likeAnimations.containsKey(holder)) {
             likeAnimations.get(holder).cancel();
         }
@@ -299,7 +296,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
                 animatorSet.start();
             }
         } else {
-            if (likedPositions.contains(holder.getPosition())) {
+            if (likedPositions.contains(holder.getPosition())) {//未点击过收藏点击过取消
                 holder.btnLike.setImageResource(R.drawable.ic_heart_red);
             } else {
                 holder.btnLike.setImageResource(R.drawable.ic_heart_outline_grey);
@@ -337,7 +334,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
             ButterKnife.inject(this, view);
         }
     }
-
 
     /**
      * 对外提供方法

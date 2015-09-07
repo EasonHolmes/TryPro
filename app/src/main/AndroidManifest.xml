@@ -72,6 +72,11 @@
         <!--一些功能demo合集end-->
 
 
+        <!--ORM-->
+        <activity android:name=".activitys.LitePalTestActivity"
+            android:screenOrientation="portrait"/>
+
+
         <!--layotucast_Start-->
         <activity android:name="com.github.mmin18.layoutcast.ResetActivity"/>
         <!--layotucast_end-->
