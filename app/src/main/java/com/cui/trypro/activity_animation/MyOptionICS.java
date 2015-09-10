@@ -18,13 +18,13 @@ import butterknife.ButterKnife;
 /**
  * Created by cuiyang on 15/8/12.
  * <p/>
- * 开源地址http://blog.csdn.net/wangjia55/article/details/42583011
+ * http://blog.csdn.net/wangjia55/article/details/42583011
  */
 public class MyOptionICS extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 允许使用transitions 5.0才需要
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        // 允许使用transitions 5.0才需要 用MyOptionICs会有问题
+//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.option_ics_act);
         ButterKnife.inject(this);

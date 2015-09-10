@@ -15,5 +15,7 @@
         <item name="windowActionBar">false</item>
         <!-- Customize your theme here. 不声明这个没有用。意思是透明。然后自己再加颜色-->
         <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 </resources>

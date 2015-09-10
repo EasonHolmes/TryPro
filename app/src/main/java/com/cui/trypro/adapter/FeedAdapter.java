@@ -336,14 +336,14 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
     }
 
     /**
-     * 对外提供方法
+     * 对外提供的方法
      */
     public void setOnFeedItemClickListener(OnFeedItemClickListener onFeedItemClickListener) {
         this.onFeedItemClickListener = onFeedItemClickListener;
     }
 
     /**
-     * 让外部需要实现的方法这样能就把值传回去
+     * 让外部需要实现的方法把值传回去
      */
     public interface OnFeedItemClickListener {
         public void onCommentsClick(View v, int position);

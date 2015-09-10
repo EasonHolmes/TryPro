@@ -22,6 +22,10 @@
 
     <color name="background_tab_pressed">#6633B5E5</color>
 
+
+    <color name="btn_send_normal">#02c754</color>
+    <color name="fab_color_shadow">#44000000</color>
+    <color name="btn_send_pressed">#006633</color>
     <!--My color-->
     <!--<color name="toolbar_background">#30D0DF</color>-->
     <!--<color name="toolbar_background">#4BC9B4</color>-->

@@ -30,6 +30,7 @@ import com.cui.trypro.activity_animation.MyOptionICS;
 import com.cui.trypro.activity_animation.ZhiHuActivity;
 import com.cui.trypro.activity_animation.activityOptionCS.ActivityCompatICS;
 import com.cui.trypro.activity_animation.activityOptionCS.ActivityOptionsCompatICS;
+import com.cui.trypro.activity_animation.activityOptionCS.transition.TransitionCompat;
 import com.cui.trypro.adapter.Animation_groups_adapter;
 import com.cui.trypro.adapter.MyBaseAdapter;
 import com.cui.trypro.utils.RecyclerUtils;
@@ -76,14 +77,18 @@ public class Activity_Animation_Act extends BaseActivity implements View.OnClick
 
         imgTe.setOnClickListener(this);
         imgBujian.setOnClickListener(this);
+
     }
+
 
     private List<String> initData() {
         list.add("知乎欢迎动画");
         list.add("gif显示");
         list.add("android_L_Animation");
         list.add("optionICS从下到上的");
+
         return list;
+
     }
 
     /**

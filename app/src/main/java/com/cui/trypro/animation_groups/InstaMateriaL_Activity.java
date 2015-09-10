@@ -147,11 +147,19 @@ public class InstaMateriaL_Activity extends BaseActivity implements FeedAdapter.
         adapter.updateItem();//adapter add data
     }
 
-    //adapter里的回调
+    //留言按钮的回调
     @Override
     public void onCommentsClick(View v, int position) {
+//        final Intent intent = new Intent(this, CommentsActivity.class);
+//        int[] startingLocation = new int[2];
+//        v.getLocationOnScreen(startingLocation);
+//        intent.putExtra(CommentsActivity.ARG_DRAWING_START_LOCATION, startingLocation[1]);
+//        startActivity(intent);
+//        overridePendingTransition(0, 0);
+        startActivity(new Intent(mContext,CommentsActivity.class));
     }
 
+    //更多的点击回调
     @Override
     public void onMoreClick(View v, int position) {
         FeedContextMenuManager.getInstance().toggleContextMenuFromView(v, position, this);
@@ -163,7 +171,7 @@ public class InstaMateriaL_Activity extends BaseActivity implements FeedAdapter.
     }
 
 
-    //评论界面里的回调
+    //more button callback
     @Override
     public void onReportClick(int feedItem) {
 

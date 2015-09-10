@@ -1,29 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout_dr"
+<LinearLayout
+    android:id="@+id/drawer_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="280dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:background="@color/gray_btn_bg_pressed_color"
-    android:orientation="vertical"
-    app:headerLayout="@layout/drawer_header"
-    app:itemTextColor="@color/black"
-    app:menu="@menu/drawer2">
-    <!--
-    app:itemIconTint=""
-    app:itemBackground=""
-    app:headerLayout  - 控制头部的布局
-    app:menu - 导航菜单的资源文件
-    android:fitsSystemWindows="true"
-    侧滑栏必须用android:layout_gravity="start"要不内容 到不了侧滑区域-->
-
-
-    <com.rengwuxian.materialedittext.MaterialEditText
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+    <!--侧滑栏必须用android:layout_gravity="start"要不内容 到不了侧滑区域-->
+    <FrameLayout
+        android:id="@+id/layout_toAccountSetting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Basic"
-        app:met_baseColor="#0056d3"/>
+        android:layout_height="200dp"
+        android:background="@drawable/drawerslimenu">
 
 
-</android.support.design.widget.NavigationView>
+        <com.cui.trypro.widget.CircleImageView
+            android:id="@+id/img_userHead_fordrawer"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="38dp"
+            android:src="@drawable/account_title"/>
+
+        <TextView
+            android:id="@+id/txt_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="18dp"
+            android:text="TestName"
+            android:textSize="20sp"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_menu_to_account"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/down"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center|left"
+                    android:text="down"
+                    android:textColor="@color/background_gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_menu_to_opinionsetting"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/search"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center|left"
+                    android:text="search"
+                    android:textColor="@color/background_gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_menu_to_usersetting"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/navi"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center|left"
+                    android:text="setting"
+                    android:textColor="@color/background_gray"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
 
-    <include layout="@layout/topbar" />
+    <include layout="@layout/topbar"/>
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/mDrawerlayout"
@@ -33,16 +33,17 @@
                     android:layout_height="match_parent"
                     app:AniBackColor="#ff0097cd">
 
+
                     <ListView
                         android:id="@+id/main_list"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"/>
                 </com.cui.trypro.View.circlerefreshlayout.CircleRefreshLayout>
 
             </LinearLayout>
         </FrameLayout>
 
-        <include layout="@layout/drawer_layout" />
+        <include layout="@layout/drawer_layout"/>
     </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

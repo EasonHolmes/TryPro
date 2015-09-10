@@ -51,12 +51,6 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-//    protected void initAnimation() {
-//        TransitionCompat.setAnimDuration(500);
-////         这段代码必须放在ActivityOptionsCompat各种设置之后
-//        TransitionCompat.startTransition(this, R.layout.instamaterial);
-//    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.menu_main,menu);
@@ -75,23 +69,26 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-//    @Override
-//    public void onBackPressed() {
     /**
-     * //material onBackPressed用这两行代码
-     * */
+     * 如果用base那其他不需要返回动画的也会随上一个动画
+     */
+    @Override
+    public void onBackPressed() {
+        /**
+         * //material onBackPressed用这两行代码
+         * */
 //        注意onBackPressed()方法——这很重要。因为它让操作系统知道在关闭第二个activity之前要完成动画的执行。
 //        finishAfterTransition();
-    /**
-     * activityOPtionICs就这个
-     * */
-//        super.onBackPressed();//activityOPtionICs不能用super要不失效
-    //TransitionCompat.setExitTransition(new MySceneAnim(this));//a test anim.Should not be use with customAnimation
-    //TransitionCompat.setAnimStartDelay(0);// default
+        /**
+         * activityOPtionICs就这个
+         * */
+        super.onBackPressed();//activityOPtionICs不能用super要不失效
+//    TransitionCompat.setExitTransition(new MySceneAnim(this));//a test anim.Should not be use with customAnimation
+//    TransitionCompat.setAnimStartDelay(0);// default
 //        TransitionCompat.setAnimDuration(500);// default
-    //TransitionCompat.setTimeInterpolator(new AccelerateDecelerateInterpolator());// default
-    //TransitionCompat.finishAfterTransition(activity, enterAnim, exitAnim);// custom animation
-    // 这段代码必须放在ActivityOptionsCompat各种设置之后
+//    TransitionCompat.setTimeInterpolator(new AccelerateDecelerateInterpolator());// default
+//    TransitionCompat.finishAfterTransition(activity, enterAnim, exitAnim);// custom animation
+//    // 这段代码必须放在ActivityOptionsCompat各种设置之后
 //        TransitionCompat.finishAfterTransition(this);
-//    }
+    }
 }

@@ -2,116 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b63ff1f358aee4077be87db5f10741b61b32fc15.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.github.mmin18.layoutcast/library/1.1.4/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="cdafc256cfa033f2425f83758ef64d28e236fbe5">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-d2b09a2fe3242b95321bc4dec79460bd21695e93.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-308c6e8a3f97695c26dd7eeff84c31a0957c9c44.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/org.litepal.android/core/1.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b70a73bc9ab5b1e40f29d40c752f0d43fc54808b">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-3b350eb10ec39d01a11304eb896a56f060bb5e3c.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.eftimoff/android-pathview/1.0.6/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b90040ba91530dc8f6282a94306ecb9f3a1339ee">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-d892c3999d61224feb691f1a8edc58b20779f5c7.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/butterknife-6.1.0-ac724ae799341cb7053d90ad50ac7bb6bb8bd1e5.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-0a57d57c0a7d66f662c25848b94ac9708c342c54.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-d421906b925953a97ca571dd8e578c3ae861beaf.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-58b2a8db6a9798275419fd3b9005478d404a1c82.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.rengwuxian.materialedittext/library/2.1.4/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="288913b440a3c61c30aa171095453a605432277a">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-5050f2f32f651657adef37728c47e78da4b64029.jar" />
-    </item>
-    <item
         jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/TryPro/SlidingLibrary/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="015e542e1a93f3a29a9ed1226f44ba7776af0e28">
+        sha1="3709c7913371460963f4efe043531ed924811004">
         <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-ddbbe85bd1207aa251fca28096dc8bb52042450b.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/libs/rebound-0.3.8.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/rebound-0.3.8-f8f7ea3622b87982c69fd7d228f72a9a0bdc1e5f.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/library-2.4.0-644681978976d6db9929c9e4a374c308a30ec267.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/me.imid.swipebacklayout.lib/library/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6d0958dbac8e7be76690b8e85d91698dfadbd81e">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-54a4da21a3f62805533540bf3edadccd20201002.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/sdk/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-98ff0887682e340aedc0b254a6c60bfe2fd3b489.jar" />
-    </item>
-    <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-ba5c50d1519096be2d11aa33a6feaeef23021c4d.jar" />
     </item>
     <item
         jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.balysv/material-ripple/1.0.2/jars/classes.jar"
@@ -121,18 +16,53 @@
         <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-aa994f3448b83f5995b62fca5bc9b4bee8fc5457.jar" />
     </item>
     <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.eftimoff/android-pathview/1.0.6/jars/libs/androidsvg-1.2.1.jar"
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/libs/GifView.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="d0cb3453e18fffeb053e9b7f052af3dcec9f75b4">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/androidsvg-1.2.1-b99c7dc609b5ede719b374a30052964a5247c9a7.jar" />
+        sha1="5a518235931001b94e87540c99bd13258f614622">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/GifView-e9e5f30f306afc382bddaa6ad4b596bbc413d207.jar" />
     </item>
     <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.rengwuxian.materialedittext/library/2.1.4/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-013d641a68221a0186898d3431549d63e7f16ce5.jar" />
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-5050f2f32f651657adef37728c47e78da4b64029.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/me.imid.swipebacklayout.lib/library/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6d0958dbac8e7be76690b8e85d91698dfadbd81e">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-54a4da21a3f62805533540bf3edadccd20201002.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/butterknife-6.1.0-ac724ae799341cb7053d90ad50ac7bb6bb8bd1e5.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/org.litepal.android/core/1.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b70a73bc9ab5b1e40f29d40c752f0d43fc54808b">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-3b350eb10ec39d01a11304eb896a56f060bb5e3c.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-0a57d57c0a7d66f662c25848b94ac9708c342c54.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-308c6e8a3f97695c26dd7eeff84c31a0957c9c44.jar" />
     </item>
     <item
         jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
@@ -142,11 +72,81 @@
         <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-0eb3c5e051ec71adee6586b48ea6cfcd79cf6321.jar" />
     </item>
     <item
-        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/libs/GifView.jar"
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.eftimoff/android-pathview/1.0.6/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="5a518235931001b94e87540c99bd13258f614622">
-        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/GifView-e9e5f30f306afc382bddaa6ad4b596bbc413d207.jar" />
+        sha1="b90040ba91530dc8f6282a94306ecb9f3a1339ee">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-d892c3999d61224feb691f1a8edc58b20779f5c7.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.eftimoff/android-pathview/1.0.6/jars/libs/androidsvg-1.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d0cb3453e18fffeb053e9b7f052af3dcec9f75b4">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/androidsvg-1.2.1-b99c7dc609b5ede719b374a30052964a5247c9a7.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-d421906b925953a97ca571dd8e578c3ae861beaf.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/library-2.4.0-644681978976d6db9929c9e4a374c308a30ec267.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.github.mmin18.layoutcast/library/1.1.4/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cdafc256cfa033f2425f83758ef64d28e236fbe5">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-d2b09a2fe3242b95321bc4dec79460bd21695e93.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-58b2a8db6a9798275419fd3b9005478d404a1c82.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-ba5c50d1519096be2d11aa33a6feaeef23021c4d.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/classes-013d641a68221a0186898d3431549d63e7f16ce5.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b63ff1f358aee4077be87db5f10741b61b32fc15.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/sdk/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-98ff0887682e340aedc0b254a6c60bfe2fd3b489.jar" />
+    </item>
+    <item
+        jar="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/libs/rebound-0.3.8.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e">
+        <dex dex="/Users/cuiyang/Documents/work/workspace/Private/TryPro/TryPro/app/build/intermediates/pre-dexed/debug/rebound-0.3.8-f8f7ea3622b87982c69fd7d228f72a9a0bdc1e5f.jar" />
     </item>
 
 </items>

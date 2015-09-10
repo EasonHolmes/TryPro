@@ -32,6 +32,9 @@
             android:name=".animation_groups.InstaMateriaL_Activity"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".animation_groups.CommentsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".activitys.Animation_Groups__Activity"
             android:screenOrientation="portrait"/>
         <activity

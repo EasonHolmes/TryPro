@@ -96,16 +96,15 @@ public class View_BaseAnimation extends BaseActivity {
         final ScaleAnimation animation = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(2000);//设置动画持续时间
-/** 常用方法 */
-//animation.setRepeatCount(int repeatCount);//设置重复次数
-//animation.setFillAfter(boolean);//动画执行完后是否停留在执行完的状态
-//animation.setStartOffset(long startOffset);//执行前的等待时间
+        /** 常用方法 */
+        //animation.setRepeatCount(int repeatCount);//设置重复次数
+        //animation.setFillAfter(boolean);//动画执行完后是否停留在执行完的状态
+        //animation.setStartOffset(long startOffset);//执行前的等待时间
         animation.startNow();
     }
 
     private void scaleXY() {
         /** 设置缩放动画 */
-
         AnimatorSet animatorSet = new AnimatorSet();
         ObjectAnimator bounceAnimX = ObjectAnimator.ofFloat(txtBase, "scaleX", 0.2f, 1f);
         bounceAnimX.setDuration(300);

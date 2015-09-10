@@ -33,7 +33,7 @@ public class FeedContextMenu extends LinearLayout {
         setLayoutParams(new LayoutParams(CONTEXT_MENU_WIDTH, ViewGroup.LayoutParams.WRAP_CONTENT));
     }
 
-    public void bindToItem(int feedItem) {
+    public void bindToItem(int feedItem) {//确定哪个position;
         this.feedItem = feedItem;
     }
 
