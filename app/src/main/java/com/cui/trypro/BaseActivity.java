@@ -38,7 +38,7 @@ public class BaseActivity extends AppCompatActivity {
             tintManager.setStatusBarTintResource(R.color.background_blue2);
         }
         mToolbar = (Toolbar) findViewById(R.id.mToolBar);
-        mToolbar.setTitle("");//设置左上角标题的，默认是APP的名字
+        mToolbar.setTitle(title);//设置左上角标题的，默认是APP的名字
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setHomeButtonEnabled(or);

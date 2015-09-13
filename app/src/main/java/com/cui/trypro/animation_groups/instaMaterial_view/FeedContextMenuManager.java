@@ -9,7 +9,7 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 
-import com.cui.trypro.View.circlerefreshlayout.Utils;
+import com.cui.trypro.View.circlerefreshlayout.Insta_Utils;
 
 
 /**
@@ -68,7 +68,7 @@ public void toggleContextMenuFromView(View openingView, int feedItem, FeedContex
     private void setupContextMenuInitialPosition(View openingView) {
         final int[] openingViewLocation = new int[2];
         openingView.getLocationOnScreen(openingViewLocation);
-        int additionalBottomMargin = Utils.dpToPx(16);
+        int additionalBottomMargin = Insta_Utils.dpToPx(16);
         contextMenuView.setTranslationX(openingViewLocation[0] - contextMenuView.getWidth() / 3);
         contextMenuView.setTranslationY(openingViewLocation[1] - contextMenuView.getHeight() - additionalBottomMargin);
     }

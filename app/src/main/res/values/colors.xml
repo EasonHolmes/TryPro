@@ -27,13 +27,11 @@
     <color name="fab_color_shadow">#44000000</color>
     <color name="btn_send_pressed">#006633</color>
     <!--My color-->
-    <!--<color name="toolbar_background">#30D0DF</color>-->
-    <!--<color name="toolbar_background">#4BC9B4</color>-->
     <color name="text_like_counter">#2b5a83</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="toolbar_background">@android:color/transparent</color>
-    <color name="toolbar_background2">#ff009688</color>
+    <color name="toolbar_background2">#4e6cef</color>
     <color name="background_white">#FFFFFF</color>
     <color name="background_forFragment">#F6F6F6</color>
     <color name="background_forupload">#fff3f3f3</color>
@@ -82,7 +80,6 @@
     <!-- 上传图片添加的颜色 -->
     <color name="none_color">#00000000</color>
     <color name="plugin_camera_black">#000000</color>
-
 
 
     <!--floationactionbutton-->

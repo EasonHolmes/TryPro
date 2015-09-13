@@ -6,8 +6,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextSwitcher;
 
 import com.cui.trypro.R;
-import com.cui.trypro.View.circlerefreshlayout.Utils;
+import com.cui.trypro.View.circlerefreshlayout.Insta_Utils;
 import com.cui.trypro.widget.SendingProgressView;
 
 import java.util.ArrayList;
@@ -222,7 +220,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> im
      */
     private void runEnterAnimation(View view, int position) {
         if (isOne && position == 0) {
-            view.setTranslationY(Utils.getScreenHeight(mContext));
+            view.setTranslationY(Insta_Utils.getScreenHeight(mContext));
             view.animate()
                     .translationY(0)
                     .setInterpolator(new DecelerateInterpolator(3.f))

@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
+import com.cui.trypro.small_function.Contacts2_Activity;
+import com.cui.trypro.small_function.Contacts_Activity;
 import com.cui.trypro.small_function.SVG_act;
 import com.cui.trypro.small_function.Time_line_Act;
 import com.cui.trypro.utils.RecyclerUtils;
@@ -61,6 +63,12 @@ public class Small_FunctionDemo_Act extends BaseActivity {
                     case 1:
                         Utils.nextAct(mContext, SVG_act.class);
                         break;
+                    case 2:
+                        Utils.nextAct(mContext, Contacts_Activity.class);
+                        break;
+                    case 3:
+                        Utils.nextAct(mContext, Contacts2_Activity.class);
+                        break;
                 }
             }
         }));
@@ -69,6 +77,8 @@ public class Small_FunctionDemo_Act extends BaseActivity {
     private void initData() {
         list.add("时间线(RecyclerView)");
         list.add("svg炫图");
+        list.add("联系人界面(自定义数据源)");
+        list.add("联系人界面2(通讯录有挤压效果)");
     }
 
 

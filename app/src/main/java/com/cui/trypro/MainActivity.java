@@ -7,9 +7,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -21,18 +24,25 @@ import com.cui.trypro.activitys.Activity_Animation_Act;
 import com.cui.trypro.activitys.Animation_Groups__Activity;
 import com.cui.trypro.activitys.LitePalTestActivity;
 import com.cui.trypro.activitys.Small_FunctionDemo_Act;
+import com.cui.trypro.adapter.MySimpleRecycler_Adapter;
 import com.cui.trypro.animation_groups.ReboundActivity;
+import com.cui.trypro.small_function.SVG_act;
+import com.cui.trypro.small_function.Time_line_Act;
+import com.cui.trypro.utils.RecyclerUtils;
 import com.cui.trypro.utils.Utils;
 import com.cui.trypro.widget.CircleImageView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
     @InjectView(R.id.main_list)
-    ListView mainList;
+    RecyclerView mainList;
     @InjectView(R.id.mDrawerlayout)
     DrawerLayout mDrawerlayout;
     @InjectView(R.id.mToolBar)
@@ -53,12 +63,6 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     LinearLayout drawerView;
 
     private ActionBarDrawerToggle mDrawerToggle;
-    private String[] animation = {"Rebound使用", "Activity转场动画", "Material_animation", "小功能demo",
-            "LitePal使用", "InstaMaterial概念设计_library", "InstaMaterial概念设计_拍照", "InstaMaterial概念设计_progress",
-            "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation",
-            "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
-
-    private String[] animation2 = {"ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation2", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation", "ListAnimation"};
     private Context mContext;
     private int lastItem;
 
@@ -67,6 +71,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private final int UPDATE = 1;
     private ArrayAdapter adapter;
     private int visiPostion = 0;
+    private List<String> list = new ArrayList<String>();
+
     private Handler hand = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -91,74 +97,53 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     private void initView() {
-        mainList.setOnItemClickListener(this);
-
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, animation);
-        mainList.setAdapter(adapter);
-
-        v = LayoutInflater.from(mContext).inflate(R.layout.footer, null);
-        v.setVisibility(View.GONE);
-        mainList.addFooterView(v);
         drawerView.setOnClickListener(this);
 
-//        mainList.setOnScrollListener(new AbsListView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(AbsListView view, int scrollState) {
-//                if (lastItem == adapter.getCount()
-//                        && scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
-//                    if (adapter.getCount() > visiPostion) {
-//                        LoadMore();
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//                lastItem = firstVisibleItem + visibleItemCount - 1;
-//                visiPostion = visibleItemCount;//最后一个item进行刷新
-//            }
-//        });
+        mainList.setLayoutManager(new LinearLayoutManager(mContext));
+        mainList.setAdapter(new MySimpleRecycler_Adapter(getData()));
+        mainList.addOnItemTouchListener(new RecyclerUtils.RecyclerItemClickListener(mContext, new RecyclerUtils.RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                switch (position) {
+                    case 0:
+                        nextActivity(ReboundActivity.class);
+                        overridePendingTransition(R.anim.in_translate_top, R.anim.in_translate_top);//从上面掉下来
+                        break;
+                    case 1:
+                        nextActivity(Activity_Animation_Act.class);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
+                        break;
+                    case 2:
+                        nextActivity(Animation_Groups__Activity.class);
+                        break;
+                    case 3:
+                        Utils.nextAct(mContext, Small_FunctionDemo_Act.class);
+                        break;
+                    case 4:
+                        Utils.nextAct(mContext, LitePalTestActivity.class);
+                        break;
+
+                }
+            }
+        }));
         /**先加载mainactivity再加载welactivity这样过度就有知乎的效果了*/
         startActivity(new Intent(mContext, WelActivity.class));
     }
 
-    /**
-     * 加载更多
-     */
-    private void LoadMore() {
-        v.setVisibility(View.VISIBLE);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                adapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, animation2);
-                mainList.setAdapter(adapter);
-                hand.obtainMessage(UPDATE).sendToTarget();
-            }
-        }, 5000);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position) {
-            case 0:
-                nextActivity(ReboundActivity.class);
-                overridePendingTransition(R.anim.in_translate_top, R.anim.in_translate_top);//从上面掉下来
-                break;
-            case 1:
-                nextActivity(Activity_Animation_Act.class);
-//                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);//push推的          style.xml中添加<item name="android:windowIsTranslucent">true</item>因为有这个属性会变成进入的activity push覆盖上来的效果
-                break;
-            case 2:
-                nextActivity(Animation_Groups__Activity.class);
-                break;
-            case 3:
-                Utils.nextAct(mContext, Small_FunctionDemo_Act.class);
-                break;
-            case 4:
-                Utils.nextAct(mContext, LitePalTestActivity.class);
-                break;
-
-        }
+    private List<String> getData() {
+        list.add("Rebound使用");
+        list.add("Activity转场动画");
+        list.add("Material_animation");
+        list.add("小功能demo");
+        list.add("LitePal使用");
+//        list.add("InstaMaterial概念设计_library");
+//        list.add("InstaMaterial概念设计_拍照");
+//        list.add("InstaMaterial概念设计_progress");
+//        list.add("ListAnimation");
+//        list.add("ListAnimation");
+//        list.add("ListAnimation");
+//        list.add("ListAnimation");
+        return list;
     }
 
     @Override

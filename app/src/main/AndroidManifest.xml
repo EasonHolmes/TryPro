@@ -3,14 +3,14 @@
     package="com.cui.trypro"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <uses-permission android:name="android.permission.READ_CONTACTS"/><!--读取通讯录-->
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/ActionBarTheme">
+        android:theme="@style/ActionBarTheme2">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -46,22 +46,27 @@
         <!--activity转场集合start-->
         <activity
             android:name=".activity_animation.ZhiHuActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme"/>
         <activity
             android:name=".activitys.Activity_Animation_Act"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme"/>
         <activity
             android:name=".activity_animation.GifActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme"/>
         <activity
             android:name=".activity_animation.AndroidL_NewApi"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme"/>
         <activity
             android:name=".activity_animation.MyOptionICS"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme"/>
         <!--activity转场集合end-->
 
-        <!--一些功能demo合集start-->
+        <!--小功能demo合集start-->
         <activity
             android:name=".activitys.Small_FunctionDemo_Act"
             android:screenOrientation="portrait"/>
@@ -72,11 +77,16 @@
         <activity
             android:name=".small_function.SVG_act"
             android:screenOrientation="portrait"/>
-        <!--一些功能demo合集end-->
+        <activity android:name=".small_function.Contacts_Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".small_function.Contacts2_Activity"
+            android:screenOrientation="portrait"/>
+        <!--小功能demo合集end-->
 
 
         <!--ORM-->
-        <activity android:name=".activitys.LitePalTestActivity"
+        <activity
+            android:name=".activitys.LitePalTestActivity"
             android:screenOrientation="portrait"/>
 
 

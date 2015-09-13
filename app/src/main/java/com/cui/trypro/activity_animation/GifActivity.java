@@ -23,7 +23,7 @@ public class GifActivity extends BaseActivity {
         setContentView(R.layout.gif_act);
         ButterKnife.inject(this);
         // 设置Gif图片源
-        gif1.setGifImage(R.drawable.dagong_qdy);
+        gif1.setGifImage(R.drawable.say_bye);
         // 添加监听器
 //        gif1.setOnClickListener(this);
         // 设置显示的大小，拉伸或者压缩

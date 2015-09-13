@@ -39,7 +39,6 @@ public class Utils {
             Log.e("tag...", "sss222s==" + ss.toString());
             mContext.startActivity(i);
         }
-
     }
 
 }

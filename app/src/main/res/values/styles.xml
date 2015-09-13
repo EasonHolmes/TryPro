@@ -14,6 +14,18 @@
         <!-- 允许使用transitions -->
         <item name="android:windowIsTranslucent">true</item>
     </style>
+    <style name="ActionBarTheme2" parent="Theme.AppCompat.NoActionBar">
+        <!--&lt;!&ndash; toolbar（actionbar）颜色 &ndash;&gt;-->
+        <item name="colorPrimary">@color/toolbar_background</item>
+        <!--&lt;!&ndash; 状态栏颜色 &ndash;&gt;-->
+        <item name="colorPrimaryDark">@color/toolbar_background</item>
+        <!--&lt;!&ndash; 窗口的背景颜色 &ndash;&gt;-->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!-- 允许使用transitions -->
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
     <!--手势关闭页面需要的属性-->
     <!--<style name="JK.SwipeBack.Transparent.Theme" parent="ActionBarTheme">-->
         <!--<item name="android:windowBackground">@android:color/transparent</item>-->

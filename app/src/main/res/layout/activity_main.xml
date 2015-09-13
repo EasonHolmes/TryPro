@@ -19,22 +19,20 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/hei">
+            android:background="@drawable/bacs">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!--<include layout="@layout/topbar" />-->
 
                 <com.cui.trypro.View.circlerefreshlayout.CircleRefreshLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:AniBackColor="#ff0097cd">
 
-
-                    <ListView
+                    <android.support.v7.widget.RecyclerView
                         android:id="@+id/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>

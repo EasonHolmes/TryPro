@@ -32,7 +32,7 @@ public class WelActivity extends AppCompatActivity {
         ObjectAnimator animator2 = new ObjectAnimator().ofFloat(welImg, "alpha", 1f, 0f);
         AnimatorSet set = new AnimatorSet();
         set.playTogether(animator, animator1, animator2);
-        set.setDuration(1000);
+        set.setDuration(5000);
         set.start();
         set.addListener(new AnimatorListenerAdapter() {
             @Override

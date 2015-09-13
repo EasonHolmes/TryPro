@@ -14,7 +14,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
@@ -22,8 +21,7 @@ import android.widget.ImageView;
 import com.cui.trypro.BaseActivity;
 import com.cui.trypro.R;
 import com.cui.trypro.View.circlerefreshlayout.SystemBarTintManager;
-import com.cui.trypro.View.circlerefreshlayout.Utils;
-import com.cui.trypro.adapter.Animation_groups_adapter;
+import com.cui.trypro.View.circlerefreshlayout.Insta_Utils;
 import com.cui.trypro.adapter.FeedAdapter;
 import com.cui.trypro.animation_groups.instaMaterial_view.FeedContextMenu;
 import com.cui.trypro.animation_groups.instaMaterial_view.FeedContextMenuManager;
@@ -106,7 +104,7 @@ public class InstaMateriaL_Activity extends BaseActivity implements FeedAdapter.
     private void startIntroAnimation() {
         /**设置初始fab位置*/
         fabCreate.setTranslationY(2 * getResources().getDimensionPixelOffset(R.dimen.btn_fab_size));
-        int actionbarSize = Utils.dpToPx(56);
+        int actionbarSize = Insta_Utils.dpToPx(56);
         toolbar2.setTranslationY(-actionbarSize);
         ivLogo.setTranslationY(-actionbarSize);
 //        inboxMenuItem.getActionView().setTranslationY(-actionbarSize);

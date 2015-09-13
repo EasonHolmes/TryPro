@@ -5,6 +5,7 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,6 +37,7 @@ import com.cui.trypro.adapter.MyBaseAdapter;
 import com.cui.trypro.utils.RecyclerUtils;
 import com.cui.trypro.utils.RecyclerUtils.RecyclerItemClickListener;
 import com.cui.trypro.utils.RecyclerUtils.RecyclerItemClickListener.OnItemClickListener;
+import com.cui.trypro.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -187,10 +189,14 @@ public class Activity_Animation_Act extends BaseActivity implements View.OnClick
                 overridePendingTransition(R.anim.unzoom_in, R.anim.unzoom_out);//缩放
                 break;
             case 1:
-//                nextActivity(GifActivity.class);
-//                overridePendingTransition(R.anim.small_2_big, R.anim.fade_out);//缩放另一种效果
+                nextActivity(GifActivity.class);
+                overridePendingTransition(R.anim.small_2_big, R.anim.fade_out);//缩放另一种效果
                 break;
             case 2:
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                    Utils.showSnackbar(simpleList,"版本需要在5.0或以上","close");
+                    return;
+                }
                 getWindow().setEnterTransition(new Explode());// 设置一个endter transition
                 Intent i = new Intent();
                 i.setClass(mContext, AndroidL_NewApi.class);

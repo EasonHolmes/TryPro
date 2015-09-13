@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 public class MyOptionICS extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 允许使用transitions 5.0才需要 用MyOptionICs会有问题
+        // 允许使用transitions 5.0才需要 MyOptionICs会有问题
 //        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.option_ics_act);
